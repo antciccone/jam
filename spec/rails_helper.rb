@@ -27,6 +27,31 @@ require 'support/factory_girl'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+  def stub_omniauth
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({"provider"=>"spotify",
+ "uid"=>"antman1216",
+ "info"=>{"name"=>"antman1216", "nickname"=>"antman1216", "email"=>"aciccone1216@yahoo.com", "urls"=>{"spotify"=>"https://open.spotify.com/user/antman1216"}, "image"=>nil},
+ "credentials"=>
+  {"token"=>
+    "#{ENV['USER_TOKEN']}",
+   "expires_at"=>1483477432,
+   "expires"=>true},
+ "extra"=>
+  {"raw_info"=>
+    {"country"=>"US",
+     "display_name"=>nil,
+     "email"=>"aciccone1216@yahoo.com",
+     "external_urls"=>{"spotify"=>"https://open.spotify.com/user/antman1216"},
+     "followers"=>{"href"=>nil, "total"=>0},
+     "href"=>"https://api.spotify.com/v1/users/antman1216",
+     "id"=>"antman1216",
+     "images"=>[],
+     "product"=>"open",
+     "type"=>"user",
+     "uri"=>"spotify:user:antman1216"}}})
+  end
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
