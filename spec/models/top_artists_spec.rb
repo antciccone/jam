@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'TopArtists' do
   context 'returns a users top artists' do
-    it '.top_artists' do
+    it '.users_top_artists' do
       VCR.use_cassette("#users_top_artists") do
         user = User.create(token: ENV['USER_TOKEN'])
 
