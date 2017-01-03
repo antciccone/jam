@@ -8,11 +8,9 @@ describe "As a user" do
 
         visit "/"
         stub_omniauth
-
+        save_and_open_page
         expect(page.status_code).to eq(200)
-        expect(page.status_code).to eq(200)
-
-          
+        expect(current_path).to eq(user_path)
       end
     end
   end
