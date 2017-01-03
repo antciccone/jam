@@ -8,6 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">Jam</a>
+            <a class="navbar-brand" href="#">Concets in your area</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -22,6 +23,7 @@
                       <%= link_to "Logout", logout_path, method: :delete %>
                     </p>
                 </li>
+
                 <% else %>
                 <li>
                     <p class="navbar-text">
@@ -32,9 +34,15 @@
             </div>
         </div>
     </nav>
-
-
- <% @top_artists.each do |artists| %>
- <p><%= artists.name %></p>
- <%= image_tag(artists.images.first[:url]) %>
-<% end %>
+    <div class="container">
+      <div class="row">
+        <% @top_artists.each do |artists| %>
+        <div class="col-sm-4">
+        <div class="artists">
+          <center><span class="artists-name"><%= artists.name %></span></center>
+          <center><span class="artists-image"><%= image_tag(artists.images.first[:url], size: "250x250") %><span></center>
+        </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
