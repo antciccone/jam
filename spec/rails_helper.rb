@@ -30,26 +30,35 @@ ActiveRecord::Migration.maintain_test_schema!
   def stub_omniauth
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:spotify] = OmniAuth::AuthHash.new({"provider"=>"spotify",
- "uid"=>"antman1216",
- "info"=>{"name"=>"antman1216", "nickname"=>"antman1216", "email"=>"aciccone1216@yahoo.com", "urls"=>{"spotify"=>"https://open.spotify.com/user/antman1216"}, "image"=>nil},
+ "uid"=>"cliff232",
+ "info"=>
+  {"name"=>"Cliff Nadaner",
+   "nickname"=>"cliff232",
+   "email"=>"cnadaner@aol.com",
+   "urls"=>{"spotify"=>"https://open.spotify.com/user/cliff232"},
+   "image"=>"https://scontent.xx.fbcdn.net/v/t1.0-1/s200x200/13879222_10157214803330576_399774410982109080_n.jpg?oh=b7bfdfb0004c3c8a978527164126c17a&oe=58EFBFF4"},
  "credentials"=>
   {"token"=>
     "#{ENV['USER_TOKEN']}",
-   "expires_at"=>1483477432,
+   "refresh_token"=>"AQBHChDAAzOr4puewcHXbAxuYuJ-zZKsj8zZ1OmMn5oqV6lCsAYNXgdDlKdsmNUmqPD_yVHwx5qAsEaJwAjhNFsdERFnsTZXoz7TaLyOh3QOieOA7VughMX8Lkan0wsqKVk",
+   "expires_at"=>1483479720,
    "expires"=>true},
  "extra"=>
   {"raw_info"=>
     {"country"=>"US",
-     "display_name"=>nil,
-     "email"=>"aciccone1216@yahoo.com",
-     "external_urls"=>{"spotify"=>"https://open.spotify.com/user/antman1216"},
-     "followers"=>{"href"=>nil, "total"=>0},
-     "href"=>"https://api.spotify.com/v1/users/antman1216",
-     "id"=>"antman1216",
-     "images"=>[],
-     "product"=>"open",
+     "display_name"=>"Cliff Nadaner",
+     "email"=>"cnadaner@aol.com",
+     "external_urls"=>{"spotify"=>"https://open.spotify.com/user/cliff232"},
+     "followers"=>{"href"=>nil, "total"=>2},
+     "href"=>"https://api.spotify.com/v1/users/cliff232",
+     "id"=>"cliff232",
+     "images"=>
+      [{"height"=>nil,
+        "url"=>"https://scontent.xx.fbcdn.net/v/t1.0-1/s200x200/13879222_10157214803330576_399774410982109080_n.jpg?oh=b7bfdfb0004c3c8a978527164126c17a&oe=58EFBFF4",
+        "width"=>nil}],
+     "product"=>"premium",
      "type"=>"user",
-     "uri"=>"spotify:user:antman1216"}}})
+     "uri"=>"spotify:user:cliff232"}}})
   end
 
 RSpec.configure do |config|
