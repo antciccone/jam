@@ -3,7 +3,7 @@ body {
 }
 
 .jumbotron {
-    background:  asset_url("cover2.jpg") no-repeat center center;
+    background:  asset_url("concert.jpg") no-repeat center center;
     -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
@@ -13,4 +13,22 @@ body {
 .jumbotron {
     padding-top: 200px;
     padding-bottom: 250px;
+}
+
+
+.featured {
+  color: grey;
+   width: 55%;
+   text-align: center;
+   border-bottom: 1px solid grey;
+   line-height: 0.1em;
+   margin: 10px 0 20px;
+}
+
+
+.featured span {
+    background:#fff;
+    padding:0 10px;
+    padding-bottom: 10px;
+
 }
