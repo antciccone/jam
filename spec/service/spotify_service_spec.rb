@@ -3,12 +3,14 @@ require 'rails_helper'
 describe 'SpotifyService' do
   context '#top_artists' do
     it 'returns an array of users top artists' do
-      user = User.create(token: ENV['USER_TOKEN'])
+      VCR.use_cassette("#spotify_service") do
 
-      spotify_artists = SpotifyService.new
-      spotify_artists.top_artists(user)
+        user = User.create(token: ENV['USER_TOKEN'])
 
-      expect(spotify_artists.class).to eq(Array)
+        spotify_artists = SpotifyService.new
+
+        expect(spotify_artists.top_artists(user).class).to eq(Array)
+      end
     end
   end
 end

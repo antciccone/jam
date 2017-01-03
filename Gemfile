@@ -21,6 +21,8 @@ gem 'omniauth'
 gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'oauth2'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'vcr'
+gem 'webmock'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

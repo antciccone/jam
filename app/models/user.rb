@@ -14,4 +14,8 @@ class User < ApplicationRecord
       new_user.token_expire  = auth_info[:credentials][:expires_at]
     end
   end
+
+  def refresh_token
+    
+  end
 end
