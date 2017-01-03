@@ -9,9 +9,11 @@ describe 'TopArtists' do
         top_artists = TopArtists.users_top_artists(user)
 
         expect(top_artists.first).to respond_to(:name)
-        expect(top_artists).to respond_to(:geners)
-        expect(top_artists).to respond_to(:geners)
-
+        expect(top_artists.first).to respond_to(:images)
+        expect(top_artists.first).to respond_to(:genres)
+        expect(top_artists.second.name).to eq("Drake")
+        expect(top_artists.second.genres.class).to eq(Array)
+        expect(top_artists.second.images.class).to eq(Array)
       end
     end
   end
