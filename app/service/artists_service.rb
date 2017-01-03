@@ -18,9 +18,11 @@ class ArtistsService
     json_parse(concerts_json.body)
   end
 
-  
+  def json_parse(concerts_json)
+    JSON.parse(concerts_json, symbolize_names: true)
+  end
 
   private
 
-  attr_reader :conn
+    attr_reader :conn
 end
