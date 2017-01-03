@@ -29,7 +29,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
   def stub_omniauth
     OmniAuth.config.test_mode = true
-    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({"provider"=>"spotify",
+    OmniAuth.config.mock_auth[:spotify] = OmniAuth::AuthHash.new({"provider"=>"spotify",
  "uid"=>"antman1216",
  "info"=>{"name"=>"antman1216", "nickname"=>"antman1216", "email"=>"aciccone1216@yahoo.com", "urls"=>{"spotify"=>"https://open.spotify.com/user/antman1216"}, "image"=>nil},
  "credentials"=>
