@@ -7,9 +7,14 @@ describe 'SpotifyService' do
 
         user = User.create(token: ENV['USER_TOKEN'])
 
-        spotify_artists = SpotifyService.new
+        spotify_artists = SpotifyService.new.top_artists(user)
 
-        expect(spotify_artists.top_artists(user).class).to eq(Array)
+
+        expect(spotify_artists.class).to eq(Array)
+        expect(spotify_artists.first).to have_key(:genres)
+        expect(spotify_artists.first).to have_key(:images)
+        expect(spotify_artists.first).to have_key(:images)
+        expect(spotify_artists.first).to have_key(:name)
       end
     end
   end
