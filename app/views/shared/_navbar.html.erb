@@ -17,6 +17,11 @@
                         <%=current_user.name %>
                     </p>
                 </li>
+                <li>
+                    <p class="navbar-text">
+                      <%= link_to "Logout", logout_path, method: :delete %>
+                    </p>
+                </li>
                 <% else %>
                 <li>
                     <p class="navbar-text">

@@ -6,4 +6,9 @@ class SessionsController < ApplicationController
     #user.refresh_token need to look info refresh_token
     redirect_to user_path(user)
   end
+
+  def destroy
+    session.delete(:user_id)
+    redirect_to root_path
+  end
 end
