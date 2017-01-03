@@ -23,6 +23,8 @@ gem 'oauth2'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'vcr'
 gem 'webmock'
+gem 'masonry-rails'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -38,6 +40,8 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'capybara'
 
 end
 

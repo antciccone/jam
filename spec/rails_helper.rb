@@ -27,6 +27,40 @@ require 'support/factory_girl'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+  def stub_omniauth
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:spotify] = OmniAuth::AuthHash.new({"provider"=>"spotify",
+ "uid"=>"cliff232",
+ "info"=>
+  {"name"=>"Cliff Nadaner",
+   "nickname"=>"cliff232",
+   "email"=>"cnadaner@aol.com",
+   "urls"=>{"spotify"=>"https://open.spotify.com/user/cliff232"},
+   "image"=>"https://scontent.xx.fbcdn.net/v/t1.0-1/s200x200/13879222_10157214803330576_399774410982109080_n.jpg?oh=b7bfdfb0004c3c8a978527164126c17a&oe=58EFBFF4"},
+ "credentials"=>
+  {"token"=>
+    "#{ENV['USER_TOKEN']}",
+   "refresh_token"=>"AQBHChDAAzOr4puewcHXbAxuYuJ-zZKsj8zZ1OmMn5oqV6lCsAYNXgdDlKdsmNUmqPD_yVHwx5qAsEaJwAjhNFsdERFnsTZXoz7TaLyOh3QOieOA7VughMX8Lkan0wsqKVk",
+   "expires_at"=>1483479720,
+   "expires"=>true},
+ "extra"=>
+  {"raw_info"=>
+    {"country"=>"US",
+     "display_name"=>"Cliff Nadaner",
+     "email"=>"cnadaner@aol.com",
+     "external_urls"=>{"spotify"=>"https://open.spotify.com/user/cliff232"},
+     "followers"=>{"href"=>nil, "total"=>2},
+     "href"=>"https://api.spotify.com/v1/users/cliff232",
+     "id"=>"cliff232",
+     "images"=>
+      [{"height"=>nil,
+        "url"=>"https://scontent.xx.fbcdn.net/v/t1.0-1/s200x200/13879222_10157214803330576_399774410982109080_n.jpg?oh=b7bfdfb0004c3c8a978527164126c17a&oe=58EFBFF4",
+        "width"=>nil}],
+     "product"=>"premium",
+     "type"=>"user",
+     "uri"=>"spotify:user:cliff232"}}})
+  end
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
