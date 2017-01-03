@@ -1,0 +1,16 @@
+body {
+  padding-top: 70px;
+}
+
+.jumbotron {
+    background:  url("cover2.jpg") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.jumbotron {
+    padding-top: 200px;
+    padding-bottom: 250px;
+}
