@@ -6,10 +6,12 @@ describe 'TopArtists' do
       VCR.use_cassette("#users_top_artists") do
         user = User.create(token: ENV['USER_TOKEN'])
 
-        top_artists = TopArtists.users_top_artists
+        top_artists = TopArtists.users_top_artists(user)
 
-        expect(artists).to respond_to(:name)
-        expect(artists).to respond_to(:geners)
+        expect(top_artists.first).to respond_to(:name)
+        expect(top_artists).to respond_to(:geners)
+        expect(top_artists).to respond_to(:geners)
+
       end
     end
   end
