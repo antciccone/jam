@@ -27,6 +27,10 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'faraday'
 gem "figaro"
+gem 'omniauth-spotify'
+gem 'omniauth'
+gem 'omniauth-oauth2', '~> 1.3.1'
+gem 'oauth2'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
