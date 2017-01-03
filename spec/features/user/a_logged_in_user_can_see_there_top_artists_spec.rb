@@ -11,6 +11,7 @@ describe "As a user" do
         click_link 'Login with Spotify'
 
         expect(page).to have_content('Kanye West')
+        expect(current_path).to eq(user_path(User.first))
       end
     end
   end

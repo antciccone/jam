@@ -1,4 +1,4 @@
-
  <% @top_artists.each do |artists| %>
  <p><%= artists.name %></p>
+ <%= image_tag(artists.images.first[:url]) %>
 <% end %>
