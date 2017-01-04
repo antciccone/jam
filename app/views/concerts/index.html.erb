@@ -1,5 +1,5 @@
 <% if @concerts == [] %>
-Your artists does not current have any concerts in yours
+<%= params[:name] %> does not have any concerts in your area
 
 <div>
   <h1>recommended concerts </h1>
@@ -14,8 +14,8 @@ Your artists does not current have any concerts in yours
 </div>
 
 <div>
-  <h1>All concerts by artist name .... </h1>
-<% @concertrecommendation.each do |artist| %>
+  <h1>All concerts by artist name <%= params[:name] %> </h1>
+<% @all_concerts.each do |artist| %>
 <p><%= artist.name %></p>
 <p><%= artist.title %></p>
 <p><%= artist.date %></p>
@@ -27,7 +27,7 @@ Your artists does not current have any concerts in yours
 
 <% else %>
 <div>
-  <h1>concerts</h1>
+  <h1>concerts by <%= params[:name] %> </h1>
   <% @concerts.each do |artist| %>
   <p><%= artist.title %></p>
   <p><%= artist.date %></p>
@@ -35,5 +35,28 @@ Your artists does not current have any concerts in yours
   <p><%= artist.ticket_link %></p>
   <p><%= artist.venue_location %></p>
 <% end %>
+</div>
+<div>
+  <h1>recommended concerts </h1>
+<% @concertrecommendation.each do |artist| %>
+<p><%= artist.name %></p>
+<p><%= artist.title %></p>
+<p><%= artist.date %></p>
+<p><%= artist.city %></p>
+<p><%= artist.ticket_link %></p>
+<p><%= artist.venue_location %></p>
+<p><% end  %>
+</div>
+
+<div>
+  <h1>All concerts by <%= params[:name] %> </h1>
+<% @all_concerts.each do |artist| %>
+<p><%= artist.name %></p>
+<p><%= artist.title %></p>
+<p><%= artist.date %></p>
+<p><%= artist.city %></p>
+<p><%= artist.ticket_link %></p>
+<p><%= artist.venue_location %></p>
+<p><% end  %>
 </div>
 <% end %>

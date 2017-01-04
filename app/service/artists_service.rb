@@ -7,6 +7,7 @@ class ArtistsService
   end
 
   def concerts(artist, lat, long)
+    artist = artist.split.join('%20')
     concerts_json = conn.get do |req|
       req.url "artists/#{artist}/events/search"
       req.params['api_version'] = '2.0'
@@ -19,6 +20,7 @@ class ArtistsService
   end
 
   def recommended_concerts(artist, lat, long)
+    artist = artist.split.join('%20')
     concerts_json = conn.get do |req|
       req.url "artists/#{artist}/events/recommended"
       req.params['api_version'] = '2.0'
@@ -31,6 +33,7 @@ class ArtistsService
   end
 
   def all_concerts(artist)
+    artist = artist.split.join('%20')
     concerts_json = conn.get do |req|
       req.url "artists/#{artist}/events"
       req.params['api_version'] = '2.0'
