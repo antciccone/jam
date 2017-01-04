@@ -1,62 +1,166 @@
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color: white">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand nav-logo" rel="home" href="#" title="Buy Sell Rent Everyting">
+                <img style="max-width:35px; margin-top: -7px;" src="/assets/logo.png">
+            </a>
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a class="jam" href="/">Jam</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <% if current_user %>
+                <li>
+                    <p class="navbar-text">
+                        <%=current_user.name %>
+                    </p>
+                </li>
+                <li>
+                    <p class="navbar-button">
+                        <%= button_to "Logout", logout_path, method: :delete, class: "button1id", class: "btn btn-success btn-sm" %>
+                    </p>
+                </li>
+
+            <% else %>
+                <li>
+                    <p class="navbar-text">
+                        <%= link_to "Login with Spotify", spotify_login_path %>
+                    </p>
+                </li>
+                <% end %>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="container">
+                    <div class="row col-md-6 col-md-offset-2 custyle">
+                        <table class="table table-striped custab">
+                            <thead>
+                                rec artists
+                                <tr>
+                                    <th>Date</th>
+                                    <th>City</th>
+                                    <th>Parent ID</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <% @concertrecommendation.each do |artist| %>
+                            <tr>
+                                <td>
+                                    <div class="text-center date-body">
+                                        <label for="" class="date-title"><%= artist.day %>  <%= artist.year %></label>
+                                        <div class="date-content">
+                                            <p class="dia"><%= artist.day_number %></p>
+                                            <hr class="nomargin"/>
+                                            <p class="nomargin">
+                                                <strong><%= artist.month %></strong>
+                                            </p>
+                                            <p class="nomargin">
+                                                <strong><%= artist.time%></strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><%= artist.city %></td>
+                                <td class="text-center">
+                                    <a class='btn btn-info btn-xs' href="#">
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                        Edit</a>
+                                    <a href="#" class="btn btn-danger btn-xs">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                        Del</a>
+                                </td>
+                                <% end %>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                One of three columns
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
 <% if @concerts == [] %>
-<%= params[:name] %> does not have any concerts in your area
+<%= params[:name] %>
+does not have any concerts in your area
 
 <div>
-  <h1>recommended concerts </h1>
-<% @concertrecommendation.each do |artist| %>
-<p><%= artist.name %></p>
-<p><%= artist.title %></p>
-<p><%= artist.date %></p>
-<p><%= artist.city %></p>
-<p><%= artist.ticket_link %></p>
-<p><%= artist.venue_location %></p>
-<p><% end  %>
-</div>
+    <h1>recommended concerts
+    </h1>
+    <% @concertrecommendation.each do |artist| %>
+    <p><%= artist.name %></p>
+    <p><%= artist.title %></p>
+    <p><%= artist.date %></p>
+    <p><%= artist.city %></p>
+    <p><%= artist.ticket_link %></p>
+    <p><%= artist.venue_location %></p>
+    <p><% end  %>
+    </div>
 
-<div>
-  <h1>All concerts by artist name <%= params[:name] %> </h1>
-<% @all_concerts.each do |artist| %>
-<p><%= artist.name %></p>
-<p><%= artist.title %></p>
-<p><%= artist.date %></p>
-<p><%= artist.city %></p>
-<p><%= artist.ticket_link %></p>
-<p><%= artist.venue_location %></p>
-<p><% end  %>
-</div>
+    <div>
+        <h1>All concerts by artist name
+            <%= params[:name] %>
+        </h1>
+        <% @all_concerts.each do |artist| %>
+        <p><%= artist.name %></p>
+        <p><%= artist.title %></p>
+        <p><%= artist.date %></p>
+        <p><%= artist.city %></p>
+        <p><%= artist.ticket_link %></p>
+        <p><%= artist.venue_location %></p>
+        <p><% end  %>
+        </div>
 
-<% else %>
-<div>
-  <h1>concerts by <%= params[:name] %> </h1>
-  <% @concerts.each do |artist| %>
-  <p><%= artist.title %></p>
-  <p><%= artist.date %></p>
-  <p><%= artist.city %></p>
-  <p><%= artist.ticket_link %></p>
-  <p><%= artist.venue_location %></p>
-<% end %>
-</div>
-<div>
-  <h1>recommended concerts </h1>
-<% @concertrecommendation.each do |artist| %>
-<p><%= artist.name %></p>
-<p><%= artist.title %></p>
-<p><%= artist.date %></p>
-<p><%= artist.city %></p>
-<p><%= artist.ticket_link %></p>
-<p><%= artist.venue_location %></p>
-<p><% end  %>
-</div>
+    <% else %>
+        <div>
+            <h1>concerts by
+                <%= params[:name] %>
+            </h1>
+            <% @concerts.each do |artist| %>
+            <p><%= artist.title %></p>
+            <p><%= artist.date %></p>
+            <p><%= artist.city %></p>
+            <p><%= artist.ticket_link %></p>
+            <p><%= artist.venue_location %></p>
+            <% end %>
+        </div>
+        <div>
+            <h1>recommended concerts
+            </h1>
+            <% @concertrecommendation.each do |artist| %>
+            <p><%= artist.name %></p>
+            <p><%= artist.title %></p>
+            <p><%= artist.date %></p>
+            <p><%= artist.city %></p>
+            <p><%= artist.ticket_link %></p>
+            <p><%= artist.venue_location %></p>
+            <p><% end  %>
+            </div>
 
-<div>
-  <h1>All concerts by <%= params[:name] %> </h1>
-<% @all_concerts.each do |artist| %>
-<p><%= artist.name %></p>
-<p><%= artist.title %></p>
-<p><%= artist.date %></p>
-<p><%= artist.city %></p>
-<p><%= artist.ticket_link %></p>
-<p><%= artist.venue_location %></p>
-<p><% end  %>
-</div>
-<% end %>
+            <div>
+                <h1>All concerts by
+                    <%= params[:name] %>
+                </h1>
+                <% @all_concerts.each do |artist| %>
+                <p><%= artist.name %></p>
+                <p><%= artist.title %></p>
+                <p><%= artist.date %></p>
+                <p><%= artist.city %></p>
+                <p><%= artist.ticket_link %></p>
+                <p><%= artist.venue_location %></p>
+                <p><% end  %>
+                </div>
+                <% end %>

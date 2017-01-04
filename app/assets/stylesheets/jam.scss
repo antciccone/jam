@@ -97,3 +97,32 @@ body {
   padding-right: 5px;
   padding-left: 40px;
 }
+
+// table
+.col-md-offset-2 {
+  margin-left: 0px;
+}
+
+// calender
+
+.date-body{
+  background-color: #0072bc;padding-bottom: 5px;
+}
+.date-body .date-title{
+  color: white;
+}
+
+.date-body .date-content{
+  background-color: white;margin-left: 5px;margin-right: 5px;
+}
+.date-body .date-content p.dia{
+  margin: 0; font-size: 12px; font-weight: bold;
+}
+.nomargin{
+  margin: 4px;
+}
+
+.text-center.date-body {
+  width: 100px;
+  height: 100px;
+}

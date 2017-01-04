@@ -13,4 +13,8 @@ class TopArtists
     end
   end
 
+  def self.one_artist(name)
+    require "pry"; binding.pry
+  end
+
 end

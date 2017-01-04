@@ -17,4 +17,23 @@ class ConcertRecommendation
     end
   end
 
+  def month
+    date.split.first.delete(",")
+  end
+
+  def day_number
+    date.split[2].delete(",")
+  end
+
+  def day
+    date.split[1].delete(",")
+  end
+
+  def year
+    date.split[3].delete(",")
+  end
+
+  def time
+    date.split.last.delete(",")
+  end
 end
