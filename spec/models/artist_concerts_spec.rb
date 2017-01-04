@@ -12,11 +12,14 @@ describe 'ArtistConcerts' do
 
         concerts = ArtistConcerts.top_artists_concerts(artist, lat, long)
 
-        expect(concerts.first).to respond_to(:formatted_datetime)
-        expect(concerts.first).to respond_to(:formatted_location)
-        expect(concerts.first).to respond_to(:formatted_datetime)
-        expect(concerts.first).to respond_to(:ticket_url)
-        expect(concerts.first).to respond_to(:venue)
+        expect(concerts.first).to respond_to(:date)
+        expect(concerts.first).to respond_to(:title)
+        expect(concerts.first).to respond_to(:city)
+        expect(concerts.first).to respond_to(:ticket_link)
+        expect(concerts.first).to respond_to(:venue_location)
+        expect(concerts.first.city).to eq("Brooklyn, NY")
+        expect(concerts.first.date).to eq("Tuesday, January 3, 2017 at 8:00PM")
+        expect(concerts.first.ticket_link).to eq("http://www.bandsintown.com/event/13298041/buy_tickets?app_id=jam&artist=Lettuce&came_from=67")
       end
     end
   end
