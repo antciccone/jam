@@ -2,7 +2,7 @@ class TopArtists
 
   attr_reader :name, :genres, :images
   def initialize(service)
-    @name = service[:name]
+    @name   = service[:name]
     @genres = service[:genres]
     @images = service[:images]
   end
