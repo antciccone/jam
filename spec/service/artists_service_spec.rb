@@ -22,13 +22,20 @@ describe 'ArtistsService' do
   end
     context 'returns recommned concerts for partiuclar artists' do
       it '.recommended_concerts' do
-        VCR.use_cassette('#bandsservice') do
+        VCR.use_cassette('#bandsservicerec') do
 
-          artists = "Lettuce"
-          lat = "40.7128"
-          long = "-74.0059"
+        artists = "Lettuce"
+        lat = "40.7128"
+        long = "-74.0059"
 
-          recommended_concerts = ArtistsService.new.recommended_concerts(artists, lat, long) 
+        recommended_concerts = ArtistsService.new.recommended_concerts(artists, lat, long)
+
+        expect(recommended_concerts.class).to eq(Array)
+        expect(recommended_concerts.first).to have_key(:formatted_datetime)
+        expect(recommended_concerts.first).to have_key(:formatted_location)
+        expect(recommended_concerts.first).to have_key(:ticket_url)
+        expect(recommended_concerts.first).to have_key(:venue)
+        expect(recommended_concerts.first[:title].class).to eq(String)
       end
     end
   end
