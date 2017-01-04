@@ -1,8 +1,9 @@
 class ConcertRecommendation
 
-  attr_reader :title, :date, :city, :ticket_link, :venue_location, :name
+  attr_reader :title, :date, :city, :ticket_link, :venue_location, :name, :image
 
   def initialize(service)
+    @image          = service[:artists].first[:image_url]
     @name           = service[:artists].first[:name]
     @title          = service[:title]
     @date           = service[:formatted_datetime]
@@ -35,5 +36,9 @@ class ConcertRecommendation
 
   def time
     date.split.last.delete(",")
+  end
+
+  def format_venue
+    title.split('@').last
   end
 end

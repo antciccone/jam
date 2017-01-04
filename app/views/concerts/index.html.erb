@@ -36,20 +36,20 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="container">
-                    <div class="row col-md-6 col-md-offset-2 custyle">
+
+          <div class="container-fluid">
+
                         <table class="table table-striped custab">
                             <thead>
                                 rec artists
                                 <tr>
                                     <th>Date</th>
+                                    <th>Artist</th>
+                                    <th>Venue</th>
                                     <th>City</th>
-                                    <th>Parent ID</th>
-                                    <th class="text-center">Action</th>
-                                </tr>
+                                    <th>Ticket Link</th>
+                                    <th></th>
+                                  </tr>
                             </thead>
                             <% @concertrecommendation.each do |artist| %>
                             <tr>
@@ -68,30 +68,21 @@
                                         </div>
                                     </div>
                                 </td>
+                                <td><%= artist.name %></td>
+                                <td><%= artist.format_venue %></td>
                                 <td><%= artist.city %></td>
                                 <td class="text-center">
-                                    <a class='btn btn-info btn-xs' href="#">
+                                    <a class='btn btn-info btn-xs' href="<%= artist.ticket_link %>">
                                         <span class="glyphicon glyphicon-edit"></span>
-                                        Edit</a>
-                                    <a href="#" class="btn btn-danger btn-xs">
-                                        <span class="glyphicon glyphicon-remove"></span>
-                                        Del</a>
+                                        Ticket Link</a>
                                 </td>
-                                <% end %>
+                                <td> <%= image_tag(artist.image, size: '85x85') %> </td>
                             </tr>
+                            <% end %>
                         </table>
-                    </div>
-                </div>
+                      </div>
 
-            </div>
-            <div class="col-sm-4">
-                One of three columns
-            </div>
 
-        </div>
-    </div>
-
-</div>
 
 <% if @concerts == [] %>
 <%= params[:name] %>

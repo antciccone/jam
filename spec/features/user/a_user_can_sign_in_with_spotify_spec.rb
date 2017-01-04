@@ -9,7 +9,7 @@ describe "As a user" do
         visit "/"
         stub_omniauth
 
-        click_link 'Login with Spotify'
+        click_button 'Login with Spotify'
 
         expect(page.status_code).to eq(200)
         expect(current_path).to eq(user_path(User.first.id))
