@@ -39,7 +39,7 @@
         <% @top_artists.each do |artists| %>
         <div class="col-sm-4">
         <div class="artists">
-          <center><span class="artists-name"><%= artists.name %></span></center>
+          <center><span class="artists-name"><%= link_to artists.name, concerts_path %></span></center>
           <center><span class="artists-image"><%= image_tag(artists.images.first[:url], size: "250x250") %><span></center>
         </div>
         </div>
