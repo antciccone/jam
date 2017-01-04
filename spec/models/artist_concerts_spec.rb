@@ -6,11 +6,11 @@ describe 'ArtistConcerts' do
     it '.top_artists_concerts' do
       VCR.use_cassette('#ArtistConcerts') do
 
-        artists = "Lettuce"
+        artist = "Lettuce"
         lat = "40.7128"
         long = "-74.0059"
 
-        concerts = ArtistConcerts.top_artists_concerts(artists, lat, long)
+        concerts = ArtistConcerts.top_artists_concerts(artist, lat, long)
 
         expect(concerts.first).to respond_to(:formatted_datetime)
         expect(concerts.first).to respond_to(:formatted_location)
