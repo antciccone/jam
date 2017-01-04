@@ -20,4 +20,16 @@ describe 'ArtistsService' do
       end
     end
   end
+    context 'returns recommned concerts for partiuclar artists' do
+      it '.recommended_concerts' do
+        VCR.use_cassette('#bandsservice') do
+
+          artists = "Lettuce"
+          lat = "40.7128"
+          long = "-74.0059"
+
+          recommended_concerts = ArtistsService.new.recommended_concerts(artists, lat, long) 
+      end
+    end
+  end
 end

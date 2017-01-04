@@ -9,8 +9,7 @@ describe 'As a user' do
         stub_omniauth
 
         click_link 'Login with Spotify'
-        save_and_open_page
-
+        click_on "Jon Bellion"
       end
     end
   end
