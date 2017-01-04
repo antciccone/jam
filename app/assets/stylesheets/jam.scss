@@ -39,7 +39,7 @@ body {
 .btn-success {
   padding-right: 25px;
   padding-left: 25px;
-  margin-right: 10px;
+  margin-right: 40px;
 }
 
 /*footer*/
@@ -79,4 +79,21 @@ body {
 
 .userpic {
   margin-top: 8px;
+}
+
+.jam {
+  padding-left: 1px;
+  font-size: 20px;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding-left: 0px;
+
+}
+
+.nav-logo {
+  padding-right: 5px;
+  padding-left: 40px;
 }
