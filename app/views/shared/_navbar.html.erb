@@ -7,7 +7,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Jam</a>
+
+            <a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
+                <img style="max-width:35px; margin-top: -7px;" src="/assets/logo.png">
+            </a>
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a href="#">Jam</a>
+                </li>
+
+            </ul>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -19,13 +28,13 @@
                 </li>
                 <li>
                     <p class="navbar-text">
-                      <%= button_to "Logout", logout_path, method: :delete %>
+                        <%= button_to "Logout", logout_path, method: :delete %>
                     </p>
                 </li>
-                <% else %>
+            <% else %>
                 <li>
                     <p class="navbar-button">
-                      <%= button_to "Login with Spotify", spotify_login_path, method: :get,  class: "button1id", class: "btn btn-success btn-sm" %>
+                        <%= button_to "Login with Spotify", spotify_login_path, method: :get, class: "button1id", class: "btn btn-success btn-sm" %>
                     </p>
                 </li>
                 <% end %>
