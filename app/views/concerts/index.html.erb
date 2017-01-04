@@ -35,16 +35,7 @@
             </div>
         </div>
     </nav>
-    <% @concerts.each do |artist| %>
-    <p><%= artist.title %></p>
-    <p><%= artist.date %></p>
-    <p><%= artist.city %></p>
-    <p><%= artist.ticket_link %></p>
-    <p><%= artist.venue_location %></p>
-    <% end %>
-
     <% if @concerts == [] %>
-    
           <div class="container-fluid">
 
                         <table class="table table-striped custab">
