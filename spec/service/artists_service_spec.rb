@@ -39,4 +39,22 @@ describe 'ArtistsService' do
       end
     end
   end
+
+  context 'returns all concerts for partiuclar artists' do
+    it '.all_artists_concerts' do
+        VCR.use_cassette('#bandsserviceallshows') do
+
+        artist = "Drake"
+
+        all_concerts = ArtistsService.new.all_concerts(artist)
+
+        expect(all_concerts.class).to eq(Array)
+        expect(all_concerts.first).to have_key(:formatted_datetime)
+        expect(all_concerts.first).to have_key(:formatted_location)
+        expect(all_concerts.first).to have_key(:ticket_url)
+        expect(all_concerts.first).to have_key(:venue)
+        expect(all_concerts.first[:title].class).to eq(String)
+      end
+    end
+  end
 end

@@ -1,1 +1,39 @@
-<% if concerts.nil? %>
+<% if @concerts == [] %>
+Your artists does not current have any concerts in yours
+
+<div>
+  <h1>recommended concerts </h1>
+<% @concertrecommendation.each do |artist| %>
+<p><%= artist.name %></p>
+<p><%= artist.title %></p>
+<p><%= artist.date %></p>
+<p><%= artist.city %></p>
+<p><%= artist.ticket_link %></p>
+<p><%= artist.venue_location %></p>
+<p><% end  %>
+</div>
+
+<div>
+  <h1>All concerts by artist name .... </h1>
+<% @concertrecommendation.each do |artist| %>
+<p><%= artist.name %></p>
+<p><%= artist.title %></p>
+<p><%= artist.date %></p>
+<p><%= artist.city %></p>
+<p><%= artist.ticket_link %></p>
+<p><%= artist.venue_location %></p>
+<p><% end  %>
+</div>
+
+<% else %>
+<div>
+  <h1>concerts</h1>
+  <% @concerts.each do |artist| %>
+  <p><%= artist.title %></p>
+  <p><%= artist.date %></p>
+  <p><%= artist.city %></p>
+  <p><%= artist.ticket_link %></p>
+  <p><%= artist.venue_location %></p>
+<% end %>
+</div>
+<% end %>

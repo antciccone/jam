@@ -30,6 +30,16 @@ class ArtistsService
     json_parse(concerts_json.body)
   end
 
+  def all_concerts(artist)
+    concerts_json = conn.get do |req|
+      req.url "artists/#{artist}/events"
+      req.params['api_version'] = '2.0'
+      req.params['app_id'] = 'jam'
+      req.params['format'] = 'json'
+    end
+    json_parse(concerts_json.body)
+  end
+
   def json_parse(concerts_json)
     JSON.parse(concerts_json, symbolize_names: true)
   end
