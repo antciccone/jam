@@ -21,7 +21,7 @@ describe 'SpotifyService' do
   context 'a user can update their token' do
     xit 'update_token' do
         VCR.use_cassette("#update_token") do
-        user = User.create(token: ENV['USER_TOKEN'])
+        user = stub_omniauth
 
         expect(response.status).to eq(200)
       end
