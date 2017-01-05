@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     session[:uid] = user.uid
     result = request.location
     a = result.data['zipcode']
-     user.update(email: a)
+     user.update(name: a)
     user.user_refresh_token
     redirect_to user_path(user)
   end
