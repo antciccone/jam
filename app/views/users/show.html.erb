@@ -2,8 +2,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
           <a class="navbar-brand nav-logo" rel="home" href="#" title="Buy Sell Rent Everyting">
-            <%= image_tag(logo.png, class: 'nav-logo') %>
-          </a>
+            <%#= image_tag("icon.png") %>          </a>
           <ul class="nav navbar-nav">
               <li class="">
                   <a class="jam" href="/">Jam</a>
@@ -56,15 +55,29 @@
           <% end %>
         </div>
       </div>
-      <div class="col-sm-4">All Artists</div>
-      <div class="row">
-        <% @top_artists.each do |artist| %>
-        <div class="col-sm-2">
-          <span class="artists-name"><%= link_to artist.name, ("#{concerts_path}""?name=#{artist.name}") %></span>
-        </div>
-        <% end %>
-    </div>
-      <div class="col-sm-4"></div>
 
-    </div>
+      <div class="col-sm-4">
+        <center><p>All Artists</p><center>
+          <hr>
+        <div class="row">
+          <% @top_artists.each do |artist| %>
+          <div class="col-sm-4">
+            <span class="artists-name"><%= link_to artist.name, ("#{concerts_path}""?name=#{artist.name}") %></span>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-sm-4 second-col">
+        <center><p>Genres</p><center>
+          <hr>
+        <div class="row">
+          <% @top_artists.each do |artist| %>
+          <div class="col-sm-4"><span>  <%=  %>  <span><br>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+  </div>
 </div>
