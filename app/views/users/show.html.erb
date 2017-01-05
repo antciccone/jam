@@ -69,15 +69,30 @@
       </div>
 
       <div class="col-sm-4 second-col">
-        <center><p>Genres</p><center>
+        <center><p>Top Artists Genres</p><center>
           <hr>
         <div class="row">
           <% @top_artists.each do |artist| %>
-          <div class="col-sm-4"><span>  <%=  %>  <span><br>
+          <div class="col-sm-4"><span>  <%=artist.genres.first %>  <span>
           </div>
           <% end %>
         </div>
       </div>
 
+      <div class="col-sm-4 second-col">
+        <center><p>Your Spotify Info</p><center>
+          <hr>
+        <div class="row">
+          <div class="col-sm-4"> <%=current_user.name %>
+          </div>
+          <div class="col-sm-4">  <%=current_user.nickname %>
+          </div>
+          <div class="col-sm-4">Joined on: <%=current_user.created_at.strftime("%b %d. %Y") %>
+          </div>
+          <div class="col-sm-12 user-image"> <%=image_tag(current_user.image, style: 'border-radius: 125px')%>
+          </div>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
