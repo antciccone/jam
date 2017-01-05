@@ -1,8 +1,13 @@
 class User < ApplicationRecord
 
-  def self.from_omniauth(auth_info)
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode
+
+  def self.from_omniauth(auth_info, lat, long)
     where(uid: auth_info[:uid]).first_or_create do |new_user|
       new_user.uid           = auth_info.uid
+      new_user.latitude      = lat
+      new_user.longitude     = long
       new_user.name          = auth_info[:info][:name]
       new_user.nickname      = auth_info[:info][:nickname]
       new_user.email         = auth_info[:info][:email]
@@ -12,8 +17,6 @@ class User < ApplicationRecord
       new_user.url           = auth_info[:extra][:raw_info][:href]
       new_user.refresh_token = auth_info[:credentials][:refresh_token]
       new_user.token_expire  = auth_info[:credentials][:expires_at]
-      new_user.latitude      = location[:latitude]
-      new_user.longitude     = location[:longitude]
     end
   end
 
