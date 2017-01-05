@@ -17,4 +17,14 @@ describe 'SpotifyService' do
       end
     end
   end
+
+  context 'a user can update their token' do
+    xit 'update_token' do
+        VCR.use_cassette("#update_token") do
+        user = User.create(token: ENV['USER_TOKEN'])
+
+        expect(response.status).to eq(200)
+      end
+    end
+  end
 end

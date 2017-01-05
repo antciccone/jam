@@ -15,7 +15,8 @@ class User < ApplicationRecord
     end
   end
 
-  def refresh_token
-
+  def user_refresh_token
+    new_token = SpotifyService.new.update_token(self)
+    self.update(token: new_token[:access_token])
   end
 end

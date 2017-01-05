@@ -3,6 +3,8 @@ class SpotifyService
   def initialize
     @conn = Faraday.new(url: 'https://api.spotify.com') do |faraday|
       faraday.adapter  Faraday.default_adapter
+    @api_key = ENV['SPOTIFY_CLIENT_ID']
+    @secert_key  = ENV['SPOTIFY_CLIENT_SECRET']
     end
   end
 
@@ -18,8 +20,17 @@ class SpotifyService
     JSON.parse(spotify_json, symbolize_names: true)
   end
 
+  def update_token(user)
+    enigma = Base64.strict_encode64("#{api_key}:#{secert_key}")
+    update_json = Faraday.new("https://accounts.spotify.com/api/token").post do |req|
+      req.headers['Authorization'] = "Basic #{enigma}"
+      req.body = { grant_type: "refresh_token", refresh_token: user.refresh_token}
+    end
+    json_parse(update_json.body)
+  end
+
   private
 
-    attr_reader :conn
+    attr_reader :conn, :api_key, :secert_key
 
 end

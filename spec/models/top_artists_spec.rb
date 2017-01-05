@@ -17,13 +17,4 @@ describe 'TopArtists' do
       end
     end
   end
-
-  context 'returns an updated token' do
-    it 'update_user_token' do
-        VCR.use_cassette("#updaet_token") do
-
-        user = User.create(token: ENV['USER_TOKEN'])
-      end
-    end
-  end
 end
