@@ -24,6 +24,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'vcr'
 gem 'webmock'
 gem 'masonry-rails'
+gem 'geocoder'
 
 
 # Use Redis adapter to run Action Cable in production
