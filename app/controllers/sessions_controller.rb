@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def create
+    require "pry"; binding.pry
     user = User.from_omniauth(request.env["omniauth.auth"], request.location.data["latitude"], request.location.data["longitude"])
     session[:uid] = user.uid
     user.user_refresh_token
