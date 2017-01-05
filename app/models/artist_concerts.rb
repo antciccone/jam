@@ -1,6 +1,6 @@
 class ArtistConcerts
 
-  attr_reader :title, :date, :city, :ticket_link, :venue_location, :image, :name
+  attr_reader :title, :date, :city, :ticket_link, :venue_location, :image, :name, :lat, :long
 
   def initialize(service)
     @image          = service[:artists].first[:image_url]
@@ -10,6 +10,8 @@ class ArtistConcerts
     @city           = service[:formatted_location]
     @ticket_link    = service[:ticket_url]
     @venue_location = service[:venue]
+    @lat            = service[:venue][:latitude]
+    @long            = service[:venue][:longitude]
   end
 
   def self.top_artists_concerts(artist, lat, long)

@@ -17,9 +17,13 @@ describe 'ArtistConcerts' do
         expect(concerts.first).to respond_to(:city)
         expect(concerts.first).to respond_to(:ticket_link)
         expect(concerts.first).to respond_to(:venue_location)
-        expect(concerts.first.city).to eq("Brooklyn, NY")
-        expect(concerts.first.date).to eq("Wednesday, January 4, 2017 at 8:00PM")
-        expect(concerts.first.ticket_link).to eq("http://www.bandsintown.com/event/13298049/buy_tickets?app_id=jam&artist=Lettuce&came_from=67")
+        expect(concerts.first).to respond_to(:lat)
+        expect(concerts.first).to respond_to(:long)
+        expect(concerts.first.city).to eq("Philadelphia, PA")
+        expect(concerts.first.date).to eq("Thursday, January 5, 2017 at 9:00PM")
+        expect(concerts.first.lat).to eq(39.941442)
+        expect(concerts.first.long).to eq(-75.148413)
+
       end
     end
   end

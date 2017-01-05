@@ -16,6 +16,8 @@ describe 'ConcertRecommendation' do
         expect(concert_rec.first).to respond_to(:city)
         expect(concert_rec.first).to respond_to(:ticket_link)
         expect(concert_rec.first).to respond_to(:venue_location)
+        expect(concerts.first).to respond_to(:lat)
+        expect(concerts.first).to respond_to(:long)
         expect(concert_rec.last.name).to eq("The Greyboy Allstars")
         expect(concert_rec.last.city).to eq("Brooklyn, NY")
         expect(concert_rec.last.date).to eq("Friday, April 21, 2017 at 8:00PM")

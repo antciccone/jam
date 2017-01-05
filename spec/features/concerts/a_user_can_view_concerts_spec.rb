@@ -8,8 +8,10 @@ describe 'As a user' do
         stub_omniauth
 
         click_button 'Login with Spotify'
-        expect(current_path).to eq(user_path(User.last))
+        User.last.update(latitude: 40.7128)
+        User.last.update(longitude: 74.0059)
 
+        expect(current_path).to eq(user_path(User.last))
         click_link 'Drake'
 
         expect(current_path).to eq(concerts_path)
