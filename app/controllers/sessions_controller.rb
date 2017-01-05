@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     user = User.from_omniauth(request.env["omniauth.auth"], location)
     session[:uid] = user.uid
     user.user_refresh_token
-    #user.geocode
+    user.geocode
     redirect_to user_path(user)
   end
 
