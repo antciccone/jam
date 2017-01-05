@@ -3,7 +3,7 @@ class AllConcerts
   attr_reader :title, :date, :city, :ticket_link, :venue_location, :name, :image
 
   def initialize(service)
-    @image           = service[:artists].first[:image_url]
+    @image          = service[:artists].first[:image_url]
     @name           = service[:artists].first[:name]
     @title          = service[:title]
     @date           = service[:formatted_datetime]

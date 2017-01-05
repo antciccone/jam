@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  get '/search', to: 'search#search', as: :search
+
   resources :users, only: [:show]
   resources :concerts, only:[:index]
 
