@@ -29,7 +29,7 @@ describe 'As a user' do
       click_link 'Drake'
 
       expect(current_path).to eq(concerts_path)
-      expect(page).to eq("Recommended Concerts")
+      expect(page).to have_content("Recommended Concerts")
     end
   end
 end
