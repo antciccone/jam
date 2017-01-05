@@ -1,12 +1,10 @@
 class SessionsController < ApplicationController
 
   def create
-    user = User.from_omniauth(request.env["omniauth.auth"])
+    user = User.from_omniauth(request.env["omniauth.auth"], location)
     session[:uid] = user.uid
-    result = request.location
-    a = result.data['zipcode']
-     user.update(name: a)
     user.user_refresh_token
+    #user.geocode
     redirect_to user_path(user)
   end
 

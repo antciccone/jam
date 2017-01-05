@@ -89,7 +89,11 @@
           </div>
           <div class="col-sm-4 user-page-info-link">Joined on: <%=current_user.created_at.strftime("%b %d. %Y") %>
           </div>
+          <% if %>
+          <%= current_user.image.nil? %>
+          <% else %>
           <div class="col-sm-12 user-image user-page-info-link"> <%=image_tag(current_user.image, style: 'border-radius: 125px')%>
+            <% end %>
           </div>
           </div>
         </div>
