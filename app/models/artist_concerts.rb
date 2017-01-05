@@ -11,7 +11,7 @@ class ArtistConcerts
     @ticket_link    = service[:ticket_url]
     @venue_location = service[:venue]
     @lat            = service[:venue][:latitude]
-    @long            = service[:venue][:longitude]
+    @long           = service[:venue][:longitude]
   end
 
   def self.top_artists_concerts(artist, lat, long)
