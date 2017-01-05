@@ -50,26 +50,26 @@
       <div class="col-sm-8">
         <div class="row">
           <% @top_artists.each do |artist| %>
-          <div class="col-sm-6"><center><span class="artists-image"><%= image_tag(artist.images.first[:url], size: "360x275") %><center><span><br>
+          <div class="col-sm-6"><center><span class="artists-image"><%= link_to image_tag(artist.images.first[:url], size: "360x275"), ("#{concerts_path}""?name=#{artist.name}") %><center><span><br>
           </div>
           <% end %>
         </div>
       </div>
 
-      <div class="col-sm-4">
-        <center><p>All Artists</p><center>
+      <div class="col-sm-4" >
+        <center><p class="user-page-info">All Artists</p><center>
           <hr>
         <div class="row">
           <% @top_artists.each do |artist| %>
           <div class="col-sm-4">
-            <span class="artists-name"><%= link_to artist.name, ("#{concerts_path}""?name=#{artist.name}") %></span>
+            <span class="artists-name"><%= link_to artist.name, ("#{concerts_path}""?name=#{artist.name}"), class: "user-page-info-link" %></span>
           </div>
           <% end %>
         </div>
       </div>
 
       <div class="col-sm-4 second-col">
-        <center><p>Top Artists Genres</p><center>
+        <center><p class="user-page-info">Top Artists Genres</p><center>
           <hr>
         <div class="row">
           <% @top_artists.each do |artist| %>
@@ -80,16 +80,16 @@
       </div>
 
       <div class="col-sm-4 second-col">
-        <center><p>Your Spotify Info</p><center>
+        <center><p class="user-page-info">Your Spotify Info</p><center>
           <hr>
         <div class="row">
-          <div class="col-sm-4"> <%=current_user.name %>
+          <div class="col-sm-4 user-page-info-link"> <%=current_user.name %>
           </div>
-          <div class="col-sm-4">  <%=current_user.nickname %>
+          <div class="col-sm-4 user-page-info-link">  <%=current_user.nickname %>
           </div>
-          <div class="col-sm-4">Joined on: <%=current_user.created_at.strftime("%b %d. %Y") %>
+          <div class="col-sm-4 user-page-info-link">Joined on: <%=current_user.created_at.strftime("%b %d. %Y") %>
           </div>
-          <div class="col-sm-12 user-image"> <%=image_tag(current_user.image, style: 'border-radius: 125px')%>
+          <div class="col-sm-12 user-image user-page-info-link"> <%=image_tag(current_user.image, style: 'border-radius: 125px')%>
           </div>
           </div>
         </div>
