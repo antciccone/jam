@@ -36,96 +36,228 @@
     </nav>
     <% if @concerts == [] %>
           <div class="container-fluid">
+            <table class="table table-striped custab">
+                <thead>
+                  <center><h2 class="featured"><span>Concerts Recommendations</span></h2></center>
+                  <br>
+                    <tr>
+                        <th>Date</th>
+                        <th>Artist</th>
+                        <th>Venue</th>
+                        <th>City</th>
+                        <th>Ticket Link</th>
+                        <th></th>
+                      </tr>
+                </thead>
+                <% @concertrecommendation.each do |artist| %>
+                <tr>
+                    <td>
+                        <div class="text-center date-body">
+                            <label for="" class="date-title"><%= artist.day %>  <%= artist.year %></label>
+                            <div class="date-content">
+                                <p class="dia"><%= artist.day_number %></p>
+                                <hr class="nomargin"/>
+                                <p class="nomargin">
+                                    <strong><%= artist.month %></strong>
+                                </p>
+                                <p class="nomargin">
+                                    <strong><%= artist.time%></strong>
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><%= artist.name %></td>
+                    <td><%= artist.format_venue %></td>
+                    <td><%= artist.city %></td>
+                    <td class="text-center">
+                        <a class='btn btn-info btn-xs' href="<%= artist.ticket_link %>">
+                            <span class="glyphicon glyphicon-edit"></span>
+                            Ticket Link</a>
+                    </td>
+                    <td> <%= image_tag(artist.image, size: '85x85') %> </td>
+                </tr>
+                <% end %>
+            </table>
+          </div>
 
-                        <table class="table table-striped custab">
-                            <thead>
-                              <center><h2 class="featured"><span>Recommended Concerts</span></h2></center>
-                              <br>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Artist</th>
-                                    <th>Venue</th>
-                                    <th>City</th>
-                                    <th>Ticket Link</th>
-                                    <th></th>
-                                  </tr>
-                            </thead>
-                            <% @concertrecommendation.each do |artist| %>
-                            <tr>
-                                <td>
-                                    <div class="text-center date-body">
-                                        <label for="" class="date-title"><%= artist.day %>  <%= artist.year %></label>
-                                        <div class="date-content">
-                                            <p class="dia"><%= artist.day_number %></p>
-                                            <hr class="nomargin"/>
-                                            <p class="nomargin">
-                                                <strong><%= artist.month %></strong>
-                                            </p>
-                                            <p class="nomargin">
-                                                <strong><%= artist.time%></strong>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td><%= artist.name %></td>
-                                <td><%= artist.format_venue %></td>
-                                <td><%= artist.city %></td>
-                                <td class="text-center">
-                                    <a class='btn btn-info btn-xs' href="<%= artist.ticket_link %>">
-                                        <span class="glyphicon glyphicon-edit"></span>
-                                        Ticket Link</a>
-                                </td>
-                                <td> <%= image_tag(artist.image, size: '85x85') %> </td>
-                            </tr>
-                            <% end %>
-                        </table>
-                      </div>
-
-                      <div class="container-fluid">
-
-                                    <table class="table table-striped custab">
-                                        <thead>
-                                          <center><h2 class="featured"><span>All <%= @artist.first.name %> Concerts</span></h2></center>
-                                          <br>
-                                            <tr>
-                                                <th>Date</th>
-                                                <th>Artist</th>
-                                                <th>Venue</th>
-                                                <th>City</th>
-                                                <th>Ticket Link</th>
-                                                <th></th>
-                                              </tr>
-                                        </thead>
-                                        <% @all_concerts.each do |artist| %>
-                                        <tr>
-                                            <td>
-                                                <div class="text-center date-body">
-                                                    <label for="" class="date-title"><%= artist.day %>  <%= artist.year %></label>
-                                                    <div class="date-content">
-                                                        <p class="dia"><%= artist.day_number %></p>
-                                                        <hr class="nomargin"/>
-                                                        <p class="nomargin">
-                                                            <strong><%= artist.month %></strong>
-                                                        </p>
-                                                        <p class="nomargin">
-                                                            <strong><%= artist.time%></strong>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><%= artist.name %></td>
-                                            <td><%= artist.format_venue %></td>
-                                            <td><%= artist.city %></td>
-                                            <td class="text-center">
-                                                <a class='btn btn-info btn-xs' href="<%= artist.ticket_link %>">
-                                                    <span class="glyphicon glyphicon-edit"></span>
-                                                    Ticket Link</a>
-                                            </td>
-                                            <td> <%= image_tag(artist.image, size: '85x85') %> </td>
-                                        </tr>
-                                        <% end %>
-                                    </table>
-                                  </div>
-
+          <div class="container-fluid">
+            <table class="table table-striped custab">
+                <thead>
+                  <center><h2 class="featured"><span>All <%= @artist.first.name %> Concerts</span></h2></center>
+                  <br>
+                    <tr>
+                        <th>Date</th>
+                        <th>Artist</th>
+                        <th>Venue</th>
+                        <th>City</th>
+                        <th>Ticket Link</th>
+                        <th></th>
+                      </tr>
+                </thead>
+                <% @all_concerts.each do |artist| %>
+                <tr>
+                    <td>
+                        <div class="text-center date-body">
+                            <label for="" class="date-title"><%= artist.day %>  <%= artist.year %></label>
+                            <div class="date-content">
+                                <p class="dia"><%= artist.day_number %></p>
+                                <hr class="nomargin"/>
+                                <p class="nomargin">
+                                    <strong><%= artist.month %></strong>
+                                </p>
+                                <p class="nomargin">
+                                    <strong><%= artist.time%></strong>
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><%= artist.name %></td>
+                    <td><%= artist.format_venue %></td>
+                    <td><%= artist.city %></td>
+                    <td class="text-center">
+                        <a class='btn btn-info btn-xs' href="<%= artist.ticket_link %>">
+                            <span class="glyphicon glyphicon-edit"></span>
+                            Ticket Link</a>
+                    </td>
+                    <td> <%= image_tag(artist.image, size: '85x85') %> </td>
+                </tr>
+                <% end %>
+            </table>
+          </div>
 <% else %>
+<div class="container-fluid">
+  <table class="table table-striped custab">
+      <thead>
+        <center><h2 class="featured"><span>Concerts in your Area</span></h2></center>
+        <br>
+          <tr>
+              <th>Date</th>
+              <th>Artist</th>
+              <th>Venue</th>
+              <th>City</th>
+              <th>Ticket Link</th>
+              <th></th>
+            </tr>
+      </thead>
+      <% @concerts.each do |artist| %>
+      <tr>
+          <td>
+              <div class="text-center date-body">
+                  <label for="" class="date-title"><%= artist.day %>  <%= artist.year %></label>
+                  <div class="date-content">
+                      <p class="dia"><%= artist.day_number %></p>
+                      <hr class="nomargin"/>
+                      <p class="nomargin">
+                          <strong><%= artist.month %></strong>
+                      </p>
+                      <p class="nomargin">
+                          <strong><%= artist.time%></strong>
+                      </p>
+                  </div>
+              </div>
+          </td>
+          <td><%= artist.name %></td>
+          <td><%= artist.format_venue %></td>
+          <td><%= artist.city %></td>
+          <td class="text-center">
+              <a class='btn btn-info btn-xs' href="<%= artist.ticket_link %>">
+                  <span class="glyphicon glyphicon-edit"></span>
+                  Ticket Link</a>
+          </td>
+          <td> <%= image_tag(artist.image, size: '85x85') %> </td>
+      </tr>
+      <% end %>
+  </table>
+</div>
+
+<div class="container-fluid">
+  <table class="table table-striped custab">
+      <thead>
+        <center><h2 class="featured"><span>Concerts Recommendations</span></h2></center>
+        <br>
+          <tr>
+              <th>Date</th>
+              <th>Artist</th>
+              <th>Venue</th>
+              <th>City</th>
+              <th>Ticket Link</th>
+              <th></th>
+            </tr>
+      </thead>
+      <% @concertrecommendation.each do |artist| %>
+      <tr>
+          <td>
+              <div class="text-center date-body">
+                  <label for="" class="date-title"><%= artist.day %>  <%= artist.year %></label>
+                  <div class="date-content">
+                      <p class="dia"><%= artist.day_number %></p>
+                      <hr class="nomargin"/>
+                      <p class="nomargin">
+                          <strong><%= artist.month %></strong>
+                      </p>
+                      <p class="nomargin">
+                          <strong><%= artist.time%></strong>
+                      </p>
+                  </div>
+              </div>
+          </td>
+          <td><%= artist.name %></td>
+          <td><%= artist.format_venue %></td>
+          <td><%= artist.city %></td>
+          <td class="text-center">
+              <a class='btn btn-info btn-xs' href="<%= artist.ticket_link %>">
+                  <span class="glyphicon glyphicon-edit"></span>
+                  Ticket Link</a>
+          </td>
+          <td> <%= image_tag(artist.image, size: '85x85') %> </td>
+      </tr>
+      <% end %>
+  </table>
+</div>
+
+<div class="container-fluid">
+  <table class="table table-striped custab">
+      <thead>
+        <center><h2 class="featured"><span>All <%= @artist.first.name %> Concerts</span></h2></center>
+        <br>
+          <tr>
+              <th>Date</th>
+              <th>Artist</th>
+              <th>Venue</th>
+              <th>City</th>
+              <th>Ticket Link</th>
+              <th></th>
+            </tr>
+      </thead>
+      <% @all_concerts.each do |artist| %>
+      <tr>
+          <td>
+              <div class="text-center date-body">
+                  <label for="" class="date-title"><%= artist.day %>  <%= artist.year %></label>
+                  <div class="date-content">
+                      <p class="dia"><%= artist.day_number %></p>
+                      <hr class="nomargin"/>
+                      <p class="nomargin">
+                          <strong><%= artist.month %></strong>
+                      </p>
+                      <p class="nomargin">
+                          <strong><%= artist.time%></strong>
+                      </p>
+                  </div>
+              </div>
+          </td>
+          <td><%= artist.name %></td>
+          <td><%= artist.format_venue %></td>
+          <td><%= artist.city %></td>
+          <td class="text-center">
+              <a class='btn btn-info btn-xs' href="<%= artist.ticket_link %>">
+                  <span class="glyphicon glyphicon-edit"></span>
+                  Ticket Link</a>
+          </td>
+          <td> <%= image_tag(artist.image, size: '85x85') %> </td>
+      </tr>
+      <% end %>
+  </table>
+</div>
+
 <% end %>
