@@ -27,7 +27,7 @@ var getAllConcerts = function(){
     url: "http://api.bandsintown.com/artists/" + artist + "/events?api_version=2.0&app_id=jam&format=json&callback"
   })
   .done(function( data ) {
-    
+
     alert( "Data Loaded" );
   });
 }
@@ -40,7 +40,7 @@ $(document).ready(function(){
 
    $('.navbar-form').on('submit', getAllConcerts);
 
-   $('form').on('submit', function(event){
+   $('.ajax form').on('submit', function(event){
     event.preventDefault();
   });
 
