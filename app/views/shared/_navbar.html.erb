@@ -16,13 +16,13 @@
                 <% if current_user %>
                 <li>
                     <p class="navbar-text">
-                        <%=current_user.name %>
+                        <%= link_to current_user.name, user_path(current_user) %>
                     </p>
                 </li>
                 <li>
-                    <p class="navbar-text">
-                        <%= button_to "Logout", logout_path, method: :delete %>
-                    </p>
+                  <p class="navbar-button">
+                    <%= button_to "Logout", logout_path, method: :delete, class: "button1id", class: "btn btn-success btn-sm" %>
+                  </p>
                 </li>
             <% else %>
                 <li>

@@ -14,6 +14,9 @@ class TopArtists
   end
 
   def self.one_artist(name)
+  end
+
+  def self.all_genres
     require "pry"; binding.pry
   end
 

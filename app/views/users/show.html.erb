@@ -47,17 +47,23 @@
     <br>
 
     <div class="container">
-
     <div class="row">
       <div class="col-sm-8">
         <div class="row">
           <% @top_artists.each do |artist| %>
-          <div class="col-sm-6"><span class="artists-image"><%= image_tag(artist.images.first[:url], size: "300x250") %><span></div>
+          <div class="col-sm-6"><center><span class="artists-image"><%= image_tag(artist.images.first[:url], size: "360x275") %><center><span><br>
+          </div>
           <% end %>
-          <br>
         </div>
       </div>
-      <div class="col-sm-4">hi</div>
+      <div class="col-sm-4">All Artists</div>
+      <div class="row">
+        <% @top_artists.each do |artist| %>
+        <div class="col-sm-2">
+          <span class="artists-name"><%= link_to artist.name, ("#{concerts_path}""?name=#{artist.name}") %></span>
+        </div>
+        <% end %>
+    </div>
       <div class="col-sm-4">hello</div>
 
     </div>
