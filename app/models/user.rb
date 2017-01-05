@@ -1,7 +1,6 @@
 class User < ApplicationRecord
 
-  reverse_geocoded_by :latitude, :longitude
-  after_validation :reverse_geocode
+
 
   def self.from_omniauth(auth_info, lat, long)
     where(uid: auth_info[:uid]).first_or_create do |new_user|
