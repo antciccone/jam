@@ -14,23 +14,27 @@
 //= require bootstrap
 //= require jquery_ujs
 //= require_tree .
+
+
 var onGetSuccess = function(data){
-  $('latest-posts').html('');
-  $('#latest-posts').append('<p class="post">' + data.name +
-    '</p>');
+  alert("it worked")
+  }
+  var onFail = function(error){
+    console.error(error);
   }
 
 var getAllConcerts = function(){
   var artist = $('input[name="q"]').val();
+  var path = "http://api.bandsintown.com/artists/" + artist + "/events?api_version=2.0&app_id=jam&format=json"
+  debugger
   return $.ajax({
     method: 'GET',
-    url: "http://api.bandsintown.com/artists/" + artist + "/events?api_version=2.0&app_id=jam&format=json&callback"
+    url: path
   })
-  .done(function( data ) {
+  .done(onGetSuccess)
+  .fail(onFail);
+  };
 
-    alert( "Data Loaded" );
-  });
-}
 
 $(document).ready(function(){
   setTimeout(function(){
@@ -40,7 +44,7 @@ $(document).ready(function(){
 
    $('.navbar-form').on('submit', getAllConcerts);
 
-   $('.ajax form').on('submit', function(event){
+   $('ajax form').on('submit', function(event){
     event.preventDefault();
   });
 
