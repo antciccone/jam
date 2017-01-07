@@ -81,8 +81,7 @@ body {
 }
 
 .jam {
-  margin-left: 34px;
-  font-size: 20px;
+
 }
 
 .nav > li > a {
@@ -93,10 +92,7 @@ body {
 }
 
 .nav-logo {
-  padding-right: 5px;
-  padding-left: 40px;
-  height: 45px;
-  width:  45px;
+
 
 }
 
@@ -366,4 +362,12 @@ input {
 
 .card-img-top {
   border-radius: 8px;
+}
+
+.navbar-brand {
+  padding-top: 10px;
+}
+
+a.navbar-brand {
+  margin-top: 5px;
 }
