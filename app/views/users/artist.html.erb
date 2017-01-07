@@ -14,7 +14,7 @@
                 <% if current_user %>
                 <li>
                     <p class="navbar-text">
-                        <%=current_user.name %>
+                        <%= link_to current_user.name, user_path(current_user) %>
                     </p>
                 </li>
                 <li>
@@ -33,56 +33,37 @@
             </div>
         </div>
     </nav>
+
     <div class="jumbotron-artist">
 <div class="container"></div>
 </div>
-    <br>
-    <br>
-    <br>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <%=image_tag(current_user.image, size: '200x200', class: 'user-image') %>
-            </h4>
-        </div>
-        <div class="col-md-6">
-                <h3><%=current_user.name %><h3>
-                <%= button_to "Open Spotify", current_user.account, method: :get, class: "", class: "btn btn-success btn-sm" %>
-                <br>
-                <h5>Nickname: <%= current_user.nickname %> | Followers: <%= current_user.followers %> | Email: <%= current_user.email %> </h5>
-                <h5> <%= link_to "Top Artists", top_artists_path %> | <%= link_to "Top Tracks", top_artists_path %> | <%= link_to "Something else", top_artists_path %> </h5>
-
-    </div>
-</div>
-</div>
-
 <br>
-
 <br>
 <div class="container">
 <center>
     <h2 class="featured">
-        <span>You Favorite Genres</span>
+        <span>20 Most Played Artists</span>
     </h2>
 </center>
 </div>
 <br>
+<br>
 <div class="container">
-<div class="row">
+  <div class="row">
     <% @top_artists.each do |artist| %>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-block">
-                <center>
-                    <h4 class="card-title">
-                        <%=artist.genres.first %>
-                    </h4>
-                </center>
-                <p class="card-text"></p>
-            </div>
+    <div class="col-md-3">
+      <div class="card">
+        <%= link_to image_tag(artist.images.second[:url], size: "240x200", class: "", class: "card-img-top"), ("#{concerts_path}""?name=#{artist.name}") %>
+        <div class="card-block">
+          <h4 class="card-title">
+            <%= artist.name %>
+          </h4>
+          <p class="card-text">Concerts this year:
+          </p>
         </div>
+      </div>
     </div>
     <% end %>
+  </div>
 </div>
-</div>
+<iframe src="https://embed.spotify.com/?uri=spotify:album:63GBbuUNBel2ovJjUrfh5r" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
