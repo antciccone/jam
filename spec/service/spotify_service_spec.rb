@@ -19,7 +19,7 @@ describe 'SpotifyService' do
   end
 
   context 'returns a users top tracks' do
-    xit "#top_tracks" do
+    it "#top_tracks" do
       VCR.use_cassette("#top_tracks") do
 
         user = User.create(token: ENV['USER_TOKEN'])
@@ -27,10 +27,8 @@ describe 'SpotifyService' do
         spotify_tracks = SpotifyService.new.top_tracks(user)
 
         expect(spotify_tracks.class).to eq(Array)
-        expect(spotify_tracks.first).to have_key(:genres)
-        expect(spotify_tracks.first).to have_key(:images)
-        expect(spotify_tracks.first).to have_key(:name)
-        expect(spotify_tracks.first[:name]).to eq('Kanye West')
+        expect(spotify_tracks.first).to have_key(:album)
+        expect(spotify_tracks.first).to have_key(:uri)
       end
     end
   end

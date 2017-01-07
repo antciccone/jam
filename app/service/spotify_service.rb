@@ -21,7 +21,6 @@ class SpotifyService
       req.headers['Authorization'] = "Bearer #{user.token}"
       req.url '/v1/me/top/tracks'
     end
-    require "pry"; binding.pry
     json_parse(spotify_json.body)[:items]
   end
 
