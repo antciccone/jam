@@ -38,6 +38,22 @@
         1,
         null
       ],
+      "/Users/aciccone/Desktop/jam/app/models/top_tracks.rb": [
+        1,
+        null,
+        1,
+        1,
+        20,
+        20,
+        null,
+        null,
+        1,
+        1,
+        20,
+        null,
+        null,
+        null
+      ],
       "/Users/aciccone/Desktop/jam/app/service/spotify_service.rb": [
         1,
         null,
@@ -402,6 +418,6 @@
         0
       ]
     },
-    "timestamp": 1483823668
+    "timestamp": 1483824622
   }
 }
