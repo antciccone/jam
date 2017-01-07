@@ -53,7 +53,7 @@
     <% @top_artists.each do |artist| %>
     <div class="col-md-3">
       <div class="card">
-        <%= link_to image_tag(artist.images.second[:url], size: "240x200", class: "", class: "card-img-top"), ("#{concerts_path}""?name=#{artist.name}") %>
+        <%= link_to image_tag(artist.images.second[:url], size: "250x250", class: "", class: "card-img-top"), ("#{concerts_path}""?name=#{artist.name}") %>
         <div class="card-block">
           <h4 class="card-title">
             <%= artist.name %>
