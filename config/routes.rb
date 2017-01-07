@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   get '/top-artists', to: 'users#artist'
+  get '/top-tracks', to: 'users#tracks'
 
   resources :concerts, only:[:index]
 

@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     @top_artists = TopArtists.users_top_artists(current_user)
   end
 
+  def tracks
+    @top_artists = TopArtists.users_top_artists(current_user)
+  end
+
   private
 
   def all_genres
