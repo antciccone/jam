@@ -47,18 +47,13 @@
 </center>
 </div>
 <br>
+
 <div class="container">
   <div class="row">
     <% @top_tracks.each do |track| %>
-    <div class="col-md-6">
-      <div class="card">
-        <center><iframe src="https://embed.spotify.com/?uri=<%= track.uri %>&theme=white" width="300" height="380" frameborder="0" allowtransparency="true"></iframe></center>
-        <div class="card-block">
-          <h4 class="card-title">
-          </h4>
+    <div class="col-md-3">
+        <iframe src="https://embed.spotify.com/?uri=<%= track.uri %>&theme=white" width="260" height="380" frameborder="0" allowtransparency="true"></iframe>
         </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
-  </div>
-</div>
