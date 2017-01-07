@@ -34,8 +34,8 @@
         </div>
     </nav>
     <div class="jumbotron-artist">
-<div class="container"></div>
-</div>
+        <div class="container"></div>
+    </div>
     <br>
     <br>
     <br>
@@ -47,42 +47,56 @@
             </h4>
         </div>
         <div class="col-md-6">
-                <h3><%=current_user.name %><h3>
-                <%= button_to "Open Spotify", current_user.account, method: :get, class: "", class: "btn btn-success btn-sm" %>
-                <br>
-                <h5>Nickname: <%= current_user.nickname %> | Followers: <%= current_user.followers %> | Email: <%= current_user.email %> </h5>
-                <h5> <%= link_to "Top Artists", top_artists_path %> | <%= link_to "Top Tracks", top_tracks_path %> | <%= link_to "Something else", top_artists_path %> </h5>
+            <h3><%=current_user.name %>
+                <h3>
+                    <%= button_to "Open Spotify", current_user.account, method: :get, class: "", class: "btn btn-success btn-sm" %>
+                    <br>
+                    <h5>Nickname:
+                        <%= current_user.nickname %>
+                        | Followers:
+                        <%= current_user.followers %>
+                        | Email:
+                        <%= current_user.email %>
+                    </h5>
+                    <h5>
+                        <%= link_to "Top Artists", top_artists_path %>
+                        |
+                        <%= link_to "Top Tracks", top_tracks_path %>
+                        |
+                    <%= link_to "Something else", top_artists_path %>
+                    </h5>
 
-    </div>
-</div>
-</div>
-
-<br>
-
-<br>
-<div class="container">
-<center>
-    <h2 class="featured">
-        <span>You Favorite Genres</span>
-    </h2>
-</center>
-</div>
-<br>
-<div class="container">
-<div class="row">
-    <% @top_artists.each do |artist| %>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-block">
-                <center>
-                    <h4 class="card-title">
-                        <%=artist.genres.first %>
-                    </h4>
-                </center>
-                <p class="card-text"></p>
+                </div>
             </div>
         </div>
-    </div>
-    <% end %>
-</div>
-</div>
+
+        <br>
+
+        <br>
+        <div class="container">
+            <center>
+                <h2 class="featured">
+                    <span>You Favorite Genres</span>
+                </h2>
+            </center>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <% @top_artists.each do |artist| %>
+                <div class="col-md-4">
+                    <center><%= artist.genres.first %>
+                        <center></div>
+                        <% end %>
+                    </div>
+                </div>
+
+                <br>
+                <div class="container">
+                    <center>
+          <h2 class="featured">
+              <span>You Top Tracks</span>
+          </h2>
+      </center>
+  </div>
+  <br>
