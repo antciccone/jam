@@ -1,0 +1,66 @@
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color: white">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand nav-logo" rel="home" href="#" title="Buy Sell Rent Everyting"></a>
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a class="jam" href="/">Jam</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <% if current_user %>
+                <li>
+                    <p class="navbar-text">
+                        <%= link_to current_user.name, user_path(current_user) %>
+                    </p>
+                </li>
+                <li>
+                    <p class="navbar-button">
+                        <%= button_to "Logout", logout_path, method: :delete, class: "button1id", class: "btn btn-success btn-sm" %>
+                    </p>
+                </li>
+
+            <% else %>
+                <li>
+                    <p class="navbar-text">
+                        <%= link_to "Login with Spotify", spotify_login_path %>
+                    </p>
+                </li>
+                <% end %>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron-artist">
+<div class="container"></div>
+</div>
+<br>
+<br>
+<div class="container">
+<center>
+    <h2 class="featured">
+        <span>20 Most Played Artists</span>
+    </h2>
+</center>
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <% @top_artists.each do |artist| %>
+    <div class="col-md-3">
+      <div class="card">
+        <%= link_to image_tag(artist.images.second[:url], size: "240x200", class: "", class: "card-img-top"), ("#{concerts_path}""?name=#{artist.name}") %>
+        <div class="card-block">
+          <h4 class="card-title">
+            <%= artist.name %>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

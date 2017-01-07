@@ -1,15 +1,14 @@
 <nav class="navbar navbar-default navbar-fixed-top" style="background-color: white">
     <div class="container-fluid">
-      <div class="navbar-header">
-          <a class="navbar-brand nav-logo" rel="home" href="#" title="Buy Sell Rent Everyting">
-                      </a>
-          <ul class="nav navbar-nav">
-              <li class="">
-                  <a class="jam" href="/">Jam</a>
-              </li>
+        <div class="navbar-header">
+            <a class="navbar-brand nav-logo" rel="home" href="#" title="Buy Sell Rent Everyting"></a>
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a class="jam" href="/">Jam</a>
+                </li>
 
-          </ul>
-      </div>
+            </ul>
+        </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <% if current_user %>
@@ -20,14 +19,14 @@
                 </li>
                 <li>
                     <p class="navbar-button">
-                      <%= button_to "Logout", logout_path, method: :delete, class: "button1id", class: "btn btn-success btn-sm" %>
+                        <%= button_to "Logout", logout_path, method: :delete, class: "button1id", class: "btn btn-success btn-sm" %>
                     </p>
                 </li>
 
-                <% else %>
+            <% else %>
                 <li>
                     <p class="navbar-text">
-                      <%= link_to "Login with Spotify", spotify_login_path %>
+                        <%= link_to "Login with Spotify", spotify_login_path %>
                     </p>
                 </li>
                 <% end %>
@@ -39,65 +38,65 @@
     </div>
     <br>
     <br>
-    <div class="container">
-      <center><h2 class="featured"><span>20 Most Listen to Artists</span></h2></center>
-    </div>
-    <br>
     <br>
 
     <div class="container">
-    <div class="row">
-      <div class="col-sm-8">
         <div class="row">
-          <% @top_artists.each do |artist| %>
-          <div class="col-sm-6"><center><span class="artists-image"><%= link_to image_tag(artist.images.first[:url], size: "360x275"), ("#{concerts_path}""?name=#{artist.name}") %><center><span><br>
-          </div>
-          <% end %>
+            <div class="col-md-6">
+                <%=image_tag(current_user.image, size: '200x200', class: 'user-image') %>
+            </h4>
         </div>
-      </div>
+        <div class="col-md-6">
+            <h3><%=current_user.name %>
+                <h3>
+                    <%= button_to "Open Spotify", current_user.account, method: :get, class: "", class: "btn btn-success btn-sm" %>
+                    <br>
+                    <h5>Nickname:
+                        <%= current_user.nickname %>
+                        | Followers:
+                        <%= current_user.followers %>
+                        | Email:
+                        <%= current_user.email %>
+                    </h5>
+                    <h5>
+                        <%= link_to "Top Artists", top_artists_path %>
+                        |
+                        <%= link_to "Top Tracks", top_tracks_path %>
+                        |
+                    <%= link_to "Something else", top_artists_path %>
+                    </h5>
 
-      <div class="col-sm-4" >
-        <center><p class="user-page-info">All Artists</p><center>
-          <hr>
-        <div class="row">
-          <% @top_artists.each do |artist| %>
-          <div class="col-sm-4">
-            <span class="artists-name"><%= link_to artist.name, ("#{concerts_path}""?name=#{artist.name}"), class: "user-page-info-link" %></span>
-          </div>
-          <% end %>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <div class="col-sm-4 second-col">
-        <center><p class="user-page-info">Top Artists Genres</p><center>
-          <hr>
-        <div class="row">
-          <% @top_artists.each do |artist| %>
-          <div class="col-sm-4"><span>  <%=artist.genres.first %>  <span>
-          </div>
-          <% end %>
-        </div>
-      </div>
+        <br>
 
-      <div class="col-sm-4 second-col">
-        <center><p class="user-page-info">Your Spotify Info</p><center>
-          <hr>
-        <div class="row">
-          <div class="col-sm-4 user-page-info-link"> <%=current_user.name %>
-          </div>
-          <div class="col-sm-4 user-page-info-link">  <%=current_user.nickname %>
-          </div>
-          <div class="col-sm-4 user-page-info-link">Joined on: <%=current_user.created_at.strftime("%b %d. %Y") %>
-          </div>
-          <% if %>
-          <%= current_user.image.nil? %>
-          <% else %>
-          <div class="col-sm-12 user-image user-page-info-link"> <%=image_tag(current_user.image, style: 'border-radius: 125px')%>
-            <% end %>
-            <%= link_to 'Search for an artist', search_path %>
-          </div>
-          </div>
+        <br>
+        <div class="container">
+            <center>
+                <h2 class="featured">
+                    <span>You Favorite Genres</span>
+                </h2>
+            </center>
         </div>
-      </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <% @top_artists.each do |artist| %>
+                <div class="col-md-4">
+                    <center><%= artist.genres.first %>
+                        <center></div>
+                        <% end %>
+                    </div>
+                </div>
+
+                <br>
+                <div class="container">
+                    <center>
+          <h2 class="featured">
+              <span>You Top Tracks</span>
+          </h2>
+      </center>
   </div>
-</div>
+  <br>

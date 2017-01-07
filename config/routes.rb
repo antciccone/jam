@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get '/search', to: 'search#search', as: :search
 
   resources :users, only: [:show]
+  get '/top-artists', to: 'users#artist'
+  get '/top-tracks', to: 'users#tracks'
+
   resources :concerts, only:[:index]
 
 end

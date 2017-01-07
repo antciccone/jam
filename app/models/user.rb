@@ -14,6 +14,8 @@ class User < ApplicationRecord
       new_user.url           = auth_info[:extra][:raw_info][:href]
       new_user.refresh_token = auth_info[:credentials][:refresh_token]
       new_user.token_expire  = auth_info[:credentials][:expires_at]
+      new_user.followers     = auth_info[:extra][:raw_info][:followers][:total]
+      new_user.account       = auth_info[:info][:urls][:spotify]
     end
   end
 

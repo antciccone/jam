@@ -18,6 +18,21 @@ describe 'SpotifyService' do
     end
   end
 
+  context 'returns a users top tracks' do
+    it "#top_tracks" do
+      VCR.use_cassette("#top_tracks") do
+
+        user = User.create(token: ENV['USER_TOKEN'])
+
+        spotify_tracks = SpotifyService.new.top_tracks(user)
+
+        expect(spotify_tracks.class).to eq(Array)
+        expect(spotify_tracks.first).to have_key(:album)
+        expect(spotify_tracks.first).to have_key(:uri)
+      end
+    end
+  end
+
   context 'a user can update their token' do
     xit 'update_token' do
         VCR.use_cassette("#update_token") do

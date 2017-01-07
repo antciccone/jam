@@ -16,6 +16,14 @@ class SpotifyService
     json_parse(spotify_json.body)[:items]
   end
 
+  def top_tracks(user)
+    spotify_json = conn.get do |req|
+      req.headers['Authorization'] = "Bearer #{user.token}"
+      req.url '/v1/me/top/tracks'
+    end
+    json_parse(spotify_json.body)[:items]
+  end
+
   def json_parse(spotify_json)
     JSON.parse(spotify_json, symbolize_names: true)
   end
