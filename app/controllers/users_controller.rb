@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def tracks
-    @top_artists = TopArtists.users_top_artists(current_user)
+    @top_tracks = TopTracks.user_top_tracks(current_user)
   end
 
   private
