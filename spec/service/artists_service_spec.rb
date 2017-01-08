@@ -5,7 +5,7 @@ describe 'ArtistsService' do
     it 'returns an array of concets for a given artists' do
       VCR.use_cassette('#bandsservice') do
 
-        artists = "Lettuce"
+        artists = "Justin bieber"
         lat = "40.7128"
         long = "-74.0059"
 

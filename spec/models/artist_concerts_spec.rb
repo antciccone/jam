@@ -1,12 +1,11 @@
 require 'rails_helper'
 
-
 describe 'ArtistConcerts' do
   context 'returns a concerts for partiuclar artist' do
     it '.top_artists_concerts' do
       VCR.use_cassette('#ArtistConcerts') do
 
-        artist = "Lettuce"
+        artist = "Justin Bieber"
         lat = "40.7128"
         long = "-74.0059"
 
@@ -19,10 +18,10 @@ describe 'ArtistConcerts' do
         expect(concerts.first).to respond_to(:venue_location)
         expect(concerts.first).to respond_to(:lat)
         expect(concerts.first).to respond_to(:long)
-        expect(concerts.first.city).to eq("Philadelphia, PA")
-        expect(concerts.first.date).to eq("Thursday, January 5, 2017 at 9:00PM")
-        expect(concerts.first.lat).to eq(39.941442)
-        expect(concerts.first.long).to eq(-75.148413)
+        expect(concerts.first.city).to eq("East Rutherford, NJ")
+        expect(concerts.first.date).to eq("Wednesday, August 23, 2017 at 7:00PM")
+        expect(concerts.first.lat).to eq(40.8139331)
+        expect(concerts.first.long).to eq(-74.0744412)
 
       end
     end
