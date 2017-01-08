@@ -38,6 +38,23 @@
         1,
         null
       ],
+      "/Users/aciccone/Desktop/jam/app/models/categories.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        20,
+        20,
+        null,
+        null,
+        1,
+        1,
+        20,
+        null,
+        null,
+        null
+      ],
       "/Users/aciccone/Desktop/jam/app/service/spotify_service.rb": [
         1,
         null,
@@ -426,6 +443,6 @@
         0
       ]
     },
-    "timestamp": 1483837674
+    "timestamp": 1483838594
   }
 }
