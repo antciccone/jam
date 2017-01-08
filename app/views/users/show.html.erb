@@ -30,7 +30,7 @@
                         |
                         <%= link_to "Your Top Tracks", top_tracks_path %>
                         |
-                    <%= link_to "Search for concert", top_artists_path %>
+                    <%= link_to "Search for a concert", search_path %>
                     </h5>
 
                 </div>
@@ -39,7 +39,15 @@
 
         <br>
         <br>
-
+        <div class="container">
+            <center>
+                <h2 class="featured">
+                    <span>Your Top Categories</span>
+                </h2>
+            </center>
+        </div>
+        <br>
+        <br>
         <div class="container">
           <div class="row">
             <% @top_categories.each do |cat| %>
@@ -56,6 +64,7 @@
             <% end %>
           </div>
         </div>
+        <br>
         <div class="container">
             <center>
                 <h2 class="featured">
@@ -63,6 +72,7 @@
                 </h2>
             </center>
         </div>
+        <br>
         <br>
         <div class="container">
             <div class="row">
