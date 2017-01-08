@@ -38,8 +38,24 @@
         </div>
 
         <br>
-
         <br>
+
+        <div class="container">
+          <div class="row">
+            <% @top_categories.each do |cat| %>
+            <div class="col-md-4">
+              <div class="card">
+                <center><%=image_tag(cat.image, size: "250x250", class: "", class: "card-img-top") %></center>
+                <div class="card-block">
+                  <h4 class="card-title">
+                    <center><%= cat.name %></center>
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
         <div class="container">
             <center>
                 <h2 class="featured">
