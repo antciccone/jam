@@ -8,14 +8,16 @@ describe 'As a user' do
         visit "/"
         stub_omniauth
         click_button 'Login with Spotify'
+        click_link 'Your Top Artists Concerts'
 
-        expect(page).to have_content('Kanye West')
-        expect(page).to have_content('Drake')
-        expect(page).to have_content('Jon Bellion')
-        expect(page).to have_content('Sam Hunt')
-        expect(page).to have_content('Future')
-        expect(page).to have_content('Rihanna')
-        expect(page).to have_content('Justin Bieber')
+        expect(page).to have_content('Kanye West Concerts')
+        expect(page).to have_content('Drake Concerts')
+        expect(page).to have_content('Jon Bellion Concerts')
+        expect(page).to have_content('Future Concerts')
+        expect(page).to have_content('Rihanna Concerts')
+        expect(page).to have_content('Justin Bieber Concerts')
+        expect(page).to have_content('Dierks Bentley Concert')
+
       end
     end
   end

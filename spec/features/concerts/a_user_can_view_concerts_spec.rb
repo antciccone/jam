@@ -12,8 +12,9 @@ describe 'As a user' do
         User.last.update(longitude: 74.0059)
 
         expect(current_path).to eq(user_path(User.last))
-        click_link 'Drake'
-
+        click_link 'Your Top Artists Concerts'
+        click_link 'Drake Concerts'
+        
         expect(current_path).to eq(concerts_path)
         expect(page).to have_content("There are no concerts for Drake in your area")
       end
@@ -28,7 +29,8 @@ describe 'As a user' do
       click_button 'Login with Spotify'
       expect(current_path).to eq(user_path(User.last))
 
-      click_link 'Drake'
+      click_link "Your Top Artists Concerts"
+      click_link "Drake Concerts"
 
       expect(current_path).to eq(concerts_path)
       expect(page).to have_content("Concert Recommendations")
