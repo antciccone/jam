@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @top_artists = TopArtists.users_top_artists(current_user)
-    @top_categories = Categories.users_top_categories(current_user)
+    @top_albums = TopAlbums.users_top_albums(current_user)
   end
 
   def artist
