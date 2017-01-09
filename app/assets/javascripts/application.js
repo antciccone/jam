@@ -20,17 +20,16 @@ var onGetSuccess = function(data){
   alert("it worked")
   }
   var onFail = function(error){
-    console.error(error);
+    console.error('didnt work');
   }
 
 var getAllConcerts = function(){
   var artist = $('input[name="q"]').val();
-  debugger;
+  var user = $('input[name="user"]').val();
   var path = "http://api.bandsintown.com/artists/" + artist + "/events?api_version=2.0&app_id=jam&format=json"
   return $.ajax({
     method: 'GET',
-    url: path,
-    data: { 'Authorization' : 'Bearer #{user.token}' }
+    url: path
 
   })
   .done(onGetSuccess)

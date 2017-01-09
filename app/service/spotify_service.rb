@@ -1,7 +1,7 @@
 class SpotifyService
 
   def initialize
-    @conn = Faraday.new(url: 'https://api.spotify.com') do |faraday|
+    @conn ||= Faraday.new(url: 'https://api.spotify.com') do |faraday|
       faraday.adapter  Faraday.default_adapter
     @api_key = ENV['SPOTIFY_CLIENT_ID']
     @secert_key  = ENV['SPOTIFY_CLIENT_SECRET']

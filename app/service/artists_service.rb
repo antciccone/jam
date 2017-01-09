@@ -1,7 +1,7 @@
 class ArtistsService
 
   def initialize
-    @conn = Faraday.new(url: 'http://api.bandsintown.com') do |faraday|
+    @conn ||= Faraday.new(url: 'http://api.bandsintown.com') do |faraday|
       faraday.adapter  Faraday.default_adapter
     end
   end
