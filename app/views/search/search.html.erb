@@ -1,43 +1,35 @@
 <nav class="navbar navbar-default navbar-fixed-top" style="background-color: white">
     <div class="container-fluid">
-      <div class="navbar-header">
-          <a class="navbar-brand nav-logo" rel="home" href="#" title="Buy Sell Rent Everyting">
-                      </a>
-          <ul class="nav navbar-nav">
-              <li class="">
-                  <a class="jam" href="/">Jam</a>
-              </li>
-
-          </ul>
-          <div class="col-sm-3 col-md-3">
-        <center><form class="navbar-form" role="search">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" name="q">
-            <div class="input-group-btn">
-                <button class="btn btn-default ajax" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
-        </div>
-      </form><center>
-    </div>
-      </div>
+        <a class="navbar-brand" href="#">
+            <%= image_tag('jam.png', size: '125x35', class: 'nav-logo-2', style: 'margin-bottom: 5px') %>
+        </a>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <% if current_user %>
                 <li>
+                  <form class="navbar-form" role="search">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search" name="q">
+                      <div class="input-group-btn">
+                        <button class="btn btn-default ajax" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                      </div>
+                    </div>
+                  </form>
+                </li>
+                <li>
                     <p class="navbar-text">
-                        <%=current_user.name %>
+                        <%= link_to current_user.name, user_path(current_user) %>
                     </p>
                 </li>
+                <li>
+                  <p class="navbar-button">
+                    <%= button_to "Logout", logout_path, method: :delete, class: "button1id", class: "btn btn-success btn-sm" %>
+                  </p>
+                </li>
+            <% else %>
                 <li>
                     <p class="navbar-button">
-                      <%= button_to "Logout", logout_path, method: :delete, class: "button1id", class: "btn btn-success btn-sm" %>
-                    </p>
-                </li>
-
-                <% else %>
-                <li>
-                    <p class="navbar-text">
-                      <%= link_to "Login with Spotify", spotify_login_path %>
+                        <%= button_to "Login with Spotify", spotify_login_path, method: :get, class: "button1id", class: "btn btn-success btn-sm" %>
                     </p>
                 </li>
                 <% end %>
