@@ -35,6 +35,11 @@
                         | Email:
                         <%= current_user.email %>
                     </h5>
+                    <h5>Your Top 3 Genres:
+                      <% @top_artists.sample(3).each do |artist| %>
+                      <%= artist.genres.first %> |
+                      <% end %>
+                    </h5>
                     <h5>
                         <%= link_to "Your Top Artists Concerts", top_artists_path %>
                         |
@@ -42,9 +47,6 @@
                         |
                         <%= link_to "Search for a concert", search_path %>
                     </h5>
-                    <% @top_artists.sample(3).each do |artist| %>
-                        Your Top Genres: <%= artist.genres.first %>
-                        <% end %>
                     </div>
                 </div>
             </div>

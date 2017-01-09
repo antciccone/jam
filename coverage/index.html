@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-01-08T20:04:14-07:00">2017-01-08T20:04:14-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-01-09T15:04:40-07:00">2017-01-09T15:04:40-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -2895,10 +2895,10 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="4">
-          <span class="hits">12</span>
+        <li class="never" data-hits="" data-linenumber="4">
           
-          <code class="ruby">    @conn = Faraday.new(url: &#39;http://api.bandsintown.com&#39;) do |faraday|</code>
+          
+          <code class="ruby">    @conn ||= Faraday.new(url: &#39;http://api.bandsintown.com&#39;) do |faraday|</code>
         </li>
       
         <li class="covered" data-hits="12" data-linenumber="5">
@@ -2907,8 +2907,8 @@
           <code class="ruby">      faraday.adapter  Faraday.default_adapter</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
-          
+        <li class="covered" data-hits="12" data-linenumber="6">
+          <span class="hits">12</span>
           
           <code class="ruby">    end</code>
         </li>
@@ -3231,10 +3231,10 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="45" data-linenumber="4">
-          <span class="hits">45</span>
+        <li class="never" data-hits="" data-linenumber="4">
           
-          <code class="ruby">    @conn = Faraday.new(url: &#39;https://api.spotify.com&#39;) do |faraday|</code>
+          
+          <code class="ruby">    @conn ||= Faraday.new(url: &#39;https://api.spotify.com&#39;) do |faraday|</code>
         </li>
       
         <li class="covered" data-hits="45" data-linenumber="5">
@@ -3255,8 +3255,8 @@
           <code class="ruby">    @secert_key  = ENV[&#39;SPOTIFY_CLIENT_SECRET&#39;]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
-          
+        <li class="covered" data-hits="45" data-linenumber="8">
+          <span class="hits">45</span>
           
           <code class="ruby">    end</code>
         </li>

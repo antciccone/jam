@@ -20,17 +20,17 @@ var onGetSuccess = function(data){
   alert("it worked")
   }
   var onFail = function(error){
-    console.error('didnt work');
+    debugger;
+    console.error(error);
   }
 
 var getAllConcerts = function(){
   var artist = $('input[name="q"]').val();
-  var user = $('input[name="user"]').val();
   var path = "http://api.bandsintown.com/artists/" + artist + "/events?api_version=2.0&app_id=jam&format=json"
+  debugger;
   return $.ajax({
     method: 'GET',
     url: path
-
   })
   .done(onGetSuccess)
   .fail(onFail);
