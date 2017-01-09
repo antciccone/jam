@@ -52,28 +52,22 @@
     <div class="container">
         <center>
             <h2 class="featured">
-                <span>Your Top Categories</span>
+                <span>Your Top Albums</span>
             </h2>
         </center>
     </div>
     <br>
     <br>
     <div class="container">
-        <div class="row">
-            <% @top_categories.each do |cat| %>
-            <div class="col-md-4">
-                <div class="card">
-                    <center><%=image_tag(cat.image, size: "250x250", class: "", class: "card-img-top") %></center>
-                    <div class="card-block">
-                        <h4 class="card-title">
-                            <center><%= cat.name %></center>
-                        </h4>
-                    </div>
-                </div>
+      <div class="row">
+        <% @top_albums.each do |track| %>
+        <div class="col-md-3">
+          <iframe src="https://embed.spotify.com/?uri=<%= track.uri %>&view=coverart&theme=white" width="270" height="380" frameborder="0" allowtransparency="true"></iframe>
             </div>
             <% end %>
+          </div>
         </div>
-    </div>
+
     <br>
     <div class="container">
         <center>
