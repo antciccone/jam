@@ -90,6 +90,7 @@
                         <th>Artist</th>
                         <th>Venue</th>
                         <th>City</th>
+                        <th>Send Email</th>
                         <th>Ticket Link</th>
                       </tr>
                 </thead>
@@ -113,6 +114,7 @@
                     <td><%= artist.name %></td>
                     <td><%= artist.format_venue %></td>
                     <td><%= artist.city %></td>
+                    <td> <%= link_to 'Send Reminder', email_path %>  </td>
                     <td class="text-center">
                         <a class='btn btn-info btn-xs' href="<%= artist.ticket_link %>">
                             <span class="glyphicon glyphicon-edit"></span>
@@ -222,6 +224,7 @@
               <th>Artist</th>
               <th>Venue</th>
               <th>City</th>
+              <th>Send Email</th>
               <th>Ticket Link</th>
             </tr>
       </thead>

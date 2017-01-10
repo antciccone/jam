@@ -17,24 +17,38 @@
 
 
 var onGetSuccess = function(data){
-  alert("it worked")
+  alert("email sent")
   }
   var onFail = function(error){
     debugger;
     console.error(error);
   }
 
-var getAllConcerts = function(){
-  var artist = $('input[name="q"]').val();
-  var path = "http://api.bandsintown.com/artists/" + artist + "/events?api_version=2.0&app_id=jam&format=json"
-  debugger;
-  return $.ajax({
-    method: 'GET',
-    url: path
-  })
-  .done(onGetSuccess)
-  .fail(onFail);
-  };
+// var getAllConcerts = function(){
+//   var artist = $('input[name="q"]').val();
+//   var path = "http://api.bandsintown.com/artists/" + artist + "/events?api_version=2.0&app_id=jam&format=json"
+//   debugger;
+//   return $.ajax({
+//     method: 'GET',
+//     url: path
+//   })
+//   .done(onGetSuccess)
+//   .fail(onFail);
+//   };
+
+// var sendEmail = function(){
+//   var path = "https://api.sendgrid.com/v3/mail/send"
+//   var email = $('input[name="email"]').val();
+//   var subject =
+//   return $.ajax({
+//     method: 'POST',
+//     url: path,
+//     headers:
+//     data: { "personalizations": [{ "to": [{  "email": email  }], "subject": subject  }]}
+//   })
+//   .done(onGetSuccess)
+//   .fail(onFail);
+// };
 
 
 $(document).ready(function(){
@@ -45,8 +59,9 @@ $(document).ready(function(){
 
    $('.navbar-form').on('submit', getAllConcerts);
 
-   $('ajax form').on('submit', function(event){
-    event.preventDefault();
-  });
+  //  $('form').on('submit', function(event){
+  //   event.preventDefault();
+  // });
+
 
  });
