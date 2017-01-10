@@ -114,7 +114,7 @@
                     <td><%= artist.name %></td>
                     <td><%= artist.format_venue %></td>
                     <td><%= artist.city %></td>
-                    <td> <%= link_to 'Send Reminder', email_path %>  </td>
+                    <td><span class="glyphicon glyphicon-email" aria-hidden="true"></span> </td>
                     <td class="text-center">
                         <a class='btn btn-info btn-xs' href="<%= artist.ticket_link %>">
                             <span class="glyphicon glyphicon-edit"></span>
@@ -260,3 +260,22 @@
 </div>
 
 <% end %>
+<br>
+<br>
+<center>
+    <form accept-charset="UTF-8" action="/sent" class="new_user" id="new_user" method="get">
+        <h3 style="margin-bottom: 25px; text-align: center;">Send Yourself a reminder!</h3>
+
+        <div class="form-group">
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" type="textarea" id="message" name="message" placeholder="Message" maxlength="140" rows="7" required></textarea>
+        </div>
+        <input class="btn btn-default" name="commit" type="submit" value="Send Email">
+    </form>
+</center>
