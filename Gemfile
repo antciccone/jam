@@ -25,6 +25,7 @@ gem 'vcr'
 gem 'webmock'
 gem 'masonry-rails'
 gem 'geocoder'
+gem 'sendgrid-ruby'
 
 group :development, :test do
   gem 'byebug', platform: :mri

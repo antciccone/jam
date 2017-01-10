@@ -4,5 +4,8 @@ class EmailController < ApplicationController
   end
 
   def sent
+    
+    require "pry"; binding.pry
+
   end
 end
