@@ -16,13 +16,13 @@
 //= require_tree .
 
 
-var onGetSuccess = function(data){
-  alert("email sent")
-  }
-  var onFail = function(error){
-    debugger;
-    console.error(error);
-  }
+// var onGetSuccess = function(data){
+//   alert("email sent")
+//   }
+//   var onFail = function(error){
+//     debugger;
+//     console.error(error);
+//   }
 
 // var getAllConcerts = function(){
 //   var artist = $('input[name="q"]').val();

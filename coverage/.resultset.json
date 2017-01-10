@@ -54,7 +54,7 @@
         1,
         null,
         1,
-        122,
+        135,
         null,
         null,
         null
@@ -481,8 +481,6 @@
         0,
         0,
         0,
-        0,
-        0,
         0
       ],
       "/Users/aciccone/Desktop/jam/app/controllers/search_controller.rb": [
@@ -495,6 +493,6 @@
         0
       ]
     },
-    "timestamp": 1484085052
+    "timestamp": 1484092029
   }
 }

@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-01-10T14:50:52-07:00">2017-01-10T14:50:52-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-01-10T16:47:09-07:00">2017-01-10T16:47:09-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">88.81%</span></span>
+    (<span class="covered_percent"><span class="yellow">89.45%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         24.38
+         24.6
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>20</b> files in total.
-    <b>277</b> relevant lines. 
+    <b>275</b> relevant lines. 
     <span class="green"><b>246</b> lines covered</span> and
-    <span class="red"><b>31</b> lines missed </span>
+    <span class="red"><b>29</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -57,7 +57,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>25.2</td>
+        <td>27.8</td>
       </tr>
       
       <tr>
@@ -73,10 +73,10 @@
       <tr>
         <td class="strong"><a href="#b95fa564a7aec74e17969726a4a3ef94cf5a6926" class="src_link" title="app/controllers/email_controller.rb">app/controllers/email_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>11</td>
-        <td>11</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
-        <td>11</td>
+        <td>9</td>
         <td>0.0</td>
       </tr>
       
@@ -259,20 +259,20 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">69.35%</span></span>
+    (<span class="covered_percent"><span class="red">71.67%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         35.26
+         36.66
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>7</b> files in total.
-    <b>62</b> relevant lines. 
+    <b>60</b> relevant lines. 
     <span class="green"><b>43</b> lines covered</span> and
-    <span class="red"><b>19</b> lines missed </span>
+    <span class="red"><b>17</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -295,7 +295,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>25.2</td>
+        <td>27.8</td>
       </tr>
       
       <tr>
@@ -311,10 +311,10 @@
       <tr>
         <td class="strong"><a href="#b95fa564a7aec74e17969726a4a3ef94cf5a6926" class="src_link" title="app/controllers/email_controller.rb">app/controllers/email_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>11</td>
-        <td>11</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
-        <td>11</td>
+        <td>9</td>
         <td>0.0</td>
       </tr>
       
@@ -775,8 +775,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="122" data-linenumber="7">
-          <span class="hits">122</span>
+        <li class="covered" data-hits="135" data-linenumber="7">
+          <span class="hits">135</span>
           
           <code class="ruby">    @current_user ||= User.find_by(uid: session[:uid]) if session[:uid]</code>
         </li>
@@ -958,9 +958,9 @@
     <h3>app/controllers/email_controller.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>11</b> relevant lines. 
+      <b>9</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>11</b> lines missed.</span>
+      <span class="red"><b>9</b> lines missed.</span>
     </div>
   </div>
   
@@ -982,52 +982,40 @@
         <li class="missed" data-hits="0" data-linenumber="3">
           
           
-          <code class="ruby">  def index</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="4">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  def sent</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="5">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    email = EmailService.new.send_email(params[:email], params[:subject], params[:message])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="6">
           
           
-          <code class="ruby">  def sent</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="7">
           
           
-          <code class="ruby">    email = EmailService.new.send_email(params[:email], params[:subject], params[:message])</code>
+          <code class="ruby">    redirect_to top_artists_path</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="8">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="9">
-          
-          
-          <code class="ruby">    redirect_to top_artists_path</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
+        <li class="missed" data-hits="0" data-linenumber="9">
           
           
           <code class="ruby">end</code>
