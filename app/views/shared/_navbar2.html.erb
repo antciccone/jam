@@ -10,7 +10,7 @@
                 <% if current_user %>
                 <li>
                     <p class="navbar-text">
-                        <%=current_user.name %>
+                        <%= link_to current_user.name, user_path(current_user) %>
                     </p>
                 </li>
                 <li>
