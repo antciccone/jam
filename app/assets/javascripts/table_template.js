@@ -5,7 +5,6 @@ var table = function(data){
   tableHTML +=  '<div class="text-center date-body">';
   tableHTML +=  '<label for="" class="date-title">'+ data.formatted_datetime.split(" ")[1] + " " + data.formatted_datetime.split(" ")[3]+ '</label>';
   tableHTML +=  '<div class="date-content">';
-  debugger;
   tableHTML +=     '<p class="dia">' + data.formatted_datetime.split(" ")[2] + '</p>';
   tableHTML +=          '<hr class="nomargin"/>';
   tableHTML +=                  '<p class="nomargin">';
