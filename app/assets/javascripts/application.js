@@ -13,55 +13,6 @@
 //= require jquery
 //= require bootstrap
 //= require jquery_ujs
+//= require table_template
+//= require search
 //= require_tree .
-
-
-// var onGetSuccess = function(data){
-//   alert("email sent")
-//   }
-//   var onFail = function(error){
-//     debugger;
-//     console.error(error);
-//   }
-
-// var getAllConcerts = function(){
-//   var artist = $('input[name="q"]').val();
-//   var path = "http://api.bandsintown.com/artists/" + artist + "/events?api_version=2.0&app_id=jam&format=json"
-//   debugger;
-//   return $.ajax({
-//     method: 'GET',
-//     url: path
-//   })
-//   .done(onGetSuccess)
-//   .fail(onFail);
-//   };
-
-// var sendEmail = function(){
-//   var path = "https://api.sendgrid.com/v3/mail/send"
-//   var email = $('input[name="email"]').val();
-//   var subject =
-//   return $.ajax({
-//     method: 'POST',
-//     url: path,
-//     headers:
-//     data: { "personalizations": [{ "to": [{  "email": email  }], "subject": subject  }]}
-//   })
-//   .done(onGetSuccess)
-//   .fail(onFail);
-// };
-
-
-$(document).ready(function(){
-  setTimeout(function(){
-  $('.alert-dismissible').fadeOut();
-    },
-   2000);
-
-  //  $('.navbar-form').on('submit', getAllConcerts);
-
-  //  $('form').on('submit', function(event){
-  //   event.preventDefault();
-  // });
-
-
- });
