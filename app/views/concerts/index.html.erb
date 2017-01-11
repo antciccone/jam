@@ -256,30 +256,11 @@
 <br>
 <br>
 
-<!-- <h3 style="margin-bottom: 25px; text-align: center;">Concert locations</h3>
-
-    <center><div id="map"  style="height:400px; width:1100px;"></div><center>
-      <br>
-<script type="text/javascript">
-function initMap() {
-  var usa = {lat: 37.09024, lng: -95.71289100000001};
-  var city = {lat: 39.7392358, lng: -104.990251};
-  var city2 = {lat: 40.7127837, lng: -74.00594130000002};
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: usa
-  });
-  var marker = new google.maps.Marker({
-    position: city,
-    map: map
-  });
-}
-</script> -->
-
-
+<hr>
+<h3 style="margin-bottom: 25px; text-align: center;">ALl <%= params[:name]  %>Concerts</h3>
 
  <center><div id="map_canvas"  style="height:400px; width:1100px;"></div><center>
-
+<br>
  <script type="text/javascript">
  jQuery(function($) {
     // Asynchronously Load the map API
@@ -305,8 +286,11 @@ function initialize() {
    markers.push(["NYC",  <%= concert.venue_location[:latitude] %>, <%= concert.venue_location[:longitude] %>]);
   <% end %>
 
-
     // Info Window Content
+    var infoWindowContent = []
+    <% @all_concerts.each do |concert| %>
+    infoWindowContent.push(['<div class="info_content">' + '<h3> <%= concert.title %>  </h3>' + '</div>']);
+    <% end %>
 
 
     // Display multiple markers on a map
