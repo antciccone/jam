@@ -57,7 +57,7 @@ $(document).ready(function(){
     },
    2000);
 
-   $('.navbar-form').on('submit', getAllConcerts);
+  //  $('.navbar-form').on('submit', getAllConcerts);
 
   //  $('form').on('submit', function(event){
   //   event.preventDefault();
