@@ -2,7 +2,7 @@
 
     <br> <br>
     <% if @concerts == [] %>
-          <div class="container-fluid">
+          <div class="container">
             <table class="table table-striped custab">
                 <thead>
                   <center><h2 class="featured"><span>Concert Recommendations</span></h2></center>
@@ -48,7 +48,7 @@
             </table>
           </div>
 
-          <div class="container-fluid">
+          <div class="container">
             <table class="table table-striped custab">
                 <thead>
                   <center><h2 class="featured"><span>All <%= @artist.first.name %> Concerts</span></h2></center>
@@ -59,7 +59,7 @@
                         <th>Venue</th>
                         <th>City</th>
                         <th>Send Email</th>
-                        <th>Ticket Link</th>
+                        <th><center>Ticket Link</center></th>
                       </tr>
                 </thead>
                 <% @all_concerts.each do |artist| %>
@@ -94,7 +94,7 @@
             </table>
           </div>
 <% else %>
-<div class="container-fluid">
+<div class="container">
   <table class="table table-striped custab">
       <thead>
         <center><h2 class="featured"><span>Concerts in your Area</span></h2></center>
@@ -105,7 +105,7 @@
               <th>Venue</th>
               <th>City</th>
               <th>Send Email</th>
-              <th>Ticket Link</th>
+              <th><center>Ticket Link</center></th>
             </tr>
       </thead>
       <% @concerts.each do |artist| %>
@@ -140,7 +140,7 @@
   </table>
 </div>
 
-<div class="container-fluid">
+<div class="container">
   <table class="table table-striped custab">
       <thead>
         <center><h2 class="featured"><span>Concert Recommendations</span></h2></center>
@@ -151,7 +151,7 @@
               <th>Venue</th>
               <th>City</th>
               <th>Send Email</th>
-              <th>Ticket Link</th>
+              <th><center>Ticket Link</center></th>
             </tr>
       </thead>
       <% @concertrecommendation.each do |artist| %>
@@ -186,7 +186,7 @@
   </table>
 </div>
 
-<div class="container-fluid">
+<div class="container">
   <table class="table table-striped custab">
       <thead>
         <center><h2 class="featured"><span>All <%= @artist.first.name %> Concerts</span></h2></center>
@@ -197,7 +197,7 @@
               <th>Venue</th>
               <th>City</th>
               <th>Send Email</th>
-              <th>Ticket Link</th>
+              <th><center>Ticket Link</center></th>
             </tr>
       </thead>
       <% @all_concerts.each do |artist| %>
@@ -221,7 +221,7 @@
           <td><%= artist.format_venue %></td>
           <td><%= artist.city %></td>
           <td><A HREF="#codeword"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></A></span> </td>
-          <td class="text-center">
+          <td class="text">
               <a class='btn btn-info btn-xs' href="<%= artist.ticket_link %>">
                   <span class="glyphicon glyphicon-edit"></span>
                   Ticket Link</a>
