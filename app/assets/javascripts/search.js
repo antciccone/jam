@@ -11,7 +11,7 @@ var onGetSuccess = function(data){
 
 var getAllConcerts = function(){
   var artist = $('input[name="q"]').val();
-  var path = "http://api.bandsintown.com/artists/" + artist + "/events?api_version=2.0&app_id=jam&format=json"
+  var path = "https://api.bandsintown.com/artists/" + artist + "/events?api_version=2.0&app_id=jam&format=json"
   return $.ajax({
     method: 'GET',
     url: path,
