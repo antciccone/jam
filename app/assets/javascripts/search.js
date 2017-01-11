@@ -2,7 +2,6 @@ var onGetSuccess = function(data){
   $('.date-title').html('');
   for (var i = 0; i < data.length; i++) {
     var tableHTML = table(data[i]);
-    debugger;
     $('table.table-striped.custab').append(tableHTML);
     }
   }
@@ -34,7 +33,7 @@ $(document).ready(function(){
 
    $('.navbar-form').on('submit', getAllConcerts);
 
-   $('form').on('submit', function(event){
+   $('form.navbar-form').on('submit', function(event){
     event.preventDefault();
   });
 
