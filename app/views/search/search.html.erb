@@ -38,6 +38,8 @@
             </div>
         </div>
     </nav>
+    <br>
+    <br>
 
     <table class="table table-striped custab">
         <thead>
@@ -52,5 +54,27 @@
                 <th>Ticket Link</th>
               </tr>
         </thead>
-    
+
     </table>
+
+    <A NAME="codeword"></a>
+    <br>
+    <hr>
+    <center>
+        <form accept-charset="UTF-8" action="/sent" class="new_user" id="new_user" method="get">
+          <h3 style="margin-bottom: 25px; text-align: center;">Send You and Your Friends a Reminder</h3>
+            <div class="form-group">
+                <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" type="textarea" id="message" name="message" placeholder="Message" maxlength="140" rows="7" required></textarea>
+            </div>
+            <input class="btn btn-default" name="commit" type="submit" value="Send Email">
+        </form>
+    </center>
+    <br>
+    <br>

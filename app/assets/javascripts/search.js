@@ -2,7 +2,8 @@ var onGetSuccess = function(data){
   $('.date-title').html('');
   for (var i = 0; i < data.length; i++) {
     var tableHTML = table(data[i]);
-    $('.table.table-striped.custab').append(tableHTML);
+    debugger;
+    $('table.table-striped.custab').append(tableHTML);
     }
   }
   var onFail = function(error){

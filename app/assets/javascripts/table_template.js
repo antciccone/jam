@@ -1,5 +1,4 @@
 var table = function(data){
-  debugger;
   var tableHTML = "";
   tableHTML += '<tr>';
   tableHTML +=      '<td>';
@@ -13,20 +12,18 @@ var table = function(data){
   tableHTML +=                  '</p>';
   tableHTML +=                   '<p class="nomargin">';
   tableHTML +=                      '<strong>' + data.formatted_datetime  + '</strong>';
-  tableHTML +=                  '</p>'
-                </div>
-            </div>
-        </td>
-        <td>Artist name </td>
-        <td>Arists venue </td>
-        <td>city</td>
-        <td><A HREF="#codeword"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></A></span> </td>
-        <td class="text-center">
-            <a class='btn btn-info btn-xs' href="<%= artist.ticket_link %>">
-                <span class="glyphicon glyphicon-edit"></span>
-                Ticket Link</a>
-        </td>
-        <td> image </td>
-    </tr>
+  tableHTML +=                  '</p>';
+  tableHTML +=              '</div>';
+  tableHTML +=          '</div>';
+  tableHTML +=      '</td>';
+  tableHTML +=      '<td>' + data.artists + '</td>';
+  tableHTML += '<td>' + data.venue.name + '</td>';
+  tableHTML +=      '<td>' + data.venue.city + '</td>';
+  tableHTML +=      '<td>' + '<A HREF="#codeword">' + '<span class="glyphicon glyphicon-envelope" aria-hidden="true">' + '</A>' + '</span>' + '</td>';
+  tableHTML +=      '<td class="text-center">';
+  tableHTML +=          '<a class="btn btn-info btn-xs" href="link">' + '<span class="glyphicon glyphicon-edit">' + '</span>' + 'Ticket Link</a>';
+  tableHTML +=     '</td>';
+  tableHTML +=     '<td>' + "hello" + '</td>';
+  tableHTML +=   '</tr>';
     return tableHTML;
 }
