@@ -21,7 +21,7 @@ var table = function(data){
   tableHTML +=      '<td>' + data.venue.city + '</td>';
   tableHTML +=      '<td>' + '<A HREF="#codeword">' + '<span class="glyphicon glyphicon-envelope" aria-hidden="true">' + '</A>' + '</span>' + '</td>';
   tableHTML +=      '<td class="text-center">';
-  tableHTML +=          '<a class="btn btn-info btn-xs" href="link">' + '<span class="glyphicon glyphicon-edit">' + '</span>' + 'Ticket Link</a>';
+  tableHTML +=          '<a class="btn btn-info btn-xs" href=' + data.ticket_url + '>' + '<span class="glyphicon glyphicon-edit">' + '</span>' + 'Ticket Link</a>';
   tableHTML +=     '</td>';
   tableHTML +=     '<td>' + "hello" + '</td>';
   tableHTML +=   '</tr>';
