@@ -16,14 +16,15 @@ var table = function(data){
   // tableHTML +=              '</div>';
   tableHTML +=          '</div>';
   tableHTML +=      '</td>';
-  tableHTML +=      '<td>' + data.artists + '</td>';
+  debugger;
+  tableHTML +=      '<td>' + data.artists[0].name + '</td>';
   tableHTML += '<td>' + data.venue.name + '</td>';
   tableHTML +=      '<td>' + data.venue.city + '</td>';
   tableHTML +=      '<td>' + '<A HREF="#codeword">' + '<span class="glyphicon glyphicon-envelope" aria-hidden="true">' + '</A>' + '</span>' + '</td>';
   tableHTML +=      '<td class="text-center">';
   tableHTML +=          '<a class="btn btn-info btn-xs" href=' + data.ticket_url + '>' + '<span class="glyphicon glyphicon-edit">' + '</span>' + 'Ticket Link</a>';
   tableHTML +=     '</td>';
-  tableHTML +=     '<td>' + "hello" + '</td>';
+  tableHTML +=     '<td>' +  '<img class="concerts-img" src=' + data.artists[0].image_url + '>' + '</td>';
   tableHTML +=   '</tr>';
     return tableHTML;
 }
