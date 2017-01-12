@@ -17,6 +17,7 @@ describe 'As a user' do
         click_button "Send Email"
 
         expect(current_path).to eq(top_artists_path)
+        expect(page).to have_content('You have sent an email')
       end
     end
   end
