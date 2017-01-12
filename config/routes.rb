@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   resources :concerts, only:[:index]
 
   get '/sent', to:  'email#sent'
+  get '/about', to: 'about#index'
 
 end
