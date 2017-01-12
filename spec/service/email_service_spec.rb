@@ -3,7 +3,7 @@ require 'rails_helper'
 
 describe 'EmailService' do
   context 'sending an email' do
-    xit '.send_email' do
+    it '.send_email' do
       VCR.turned_off do
         WebMock.allow_net_connect!
 
